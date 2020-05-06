@@ -128,7 +128,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -213,7 +213,27 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">tensor</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">solve</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
 </div>
     
 
@@ -300,6 +320,28 @@ $\begin{bmatrix}
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_equations_2d</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span><span class="n">y_dict</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">y_dict</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_dict</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#1C2833'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#1C2833'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+    
+<span class="n">x</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">y_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'2x-y=0'</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span>
+         <span class="s1">'-x+2y=3'</span><span class="p">:(</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">plot_equations_2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y_dict</span><span class="p">)</span>        
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -367,11 +409,15 @@ $\begin{bmatrix}
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strt_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
+<span class="n">strt_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">end_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
 
 <span class="n">diff</span> <span class="o">=</span> <span class="n">end_pts</span> <span class="o">-</span> <span class="n">strt_pts</span>
@@ -388,6 +434,7 @@ $\begin{bmatrix}
 </div>
 </div>
 
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -421,11 +468,15 @@ $\begin{bmatrix}
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strt_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
+<span class="n">strt_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">end_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
 
 <span class="n">diff</span> <span class="o">=</span> <span class="n">end_pts</span> <span class="o">-</span> <span class="n">strt_pts</span>
@@ -442,6 +493,7 @@ $\begin{bmatrix}
 </div>
 </div>
 
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -537,7 +589,40 @@ $\begin{bmatrix}
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">)),</span> <span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">Z1</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">X</span>
+<span class="n">Z2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">Z3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">Y</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">23</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'b'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">'g'</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">1</span><span class="p">,),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,),(</span><span class="mi">3</span><span class="p">,),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -595,7 +680,35 @@ $\begin{bmatrix}
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
+<span class="n">strt_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">end_pts</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+
+<span class="n">diff</span> <span class="o">=</span> <span class="n">end_pts</span> <span class="o">-</span> <span class="n">strt_pts</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">strt_pts</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">strt_pts</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">strt_pts</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">diff</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">diff</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">diff</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -667,7 +780,7 @@ $\begin{bmatrix}
 <a class="anchor" href="#Can-I-solve-Ax-=-b-for-every-b?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Can I solve Ax = b for every b?<a class="anchor-link" href="#Can-I-solve-Ax-=-b-for-every-b?"> </a>
 </h3>
 <p>Do the linear combinations of the columns fill 3 dimensional space.</p>
-<p>If you have some dimensionality in each direction, then you can.  3 equations with 3 uknowns can fill the 3D space as long as they don't s.</p>
+<p>If you have some dimensionality in each direction, then you can.  3 equations with 3 uknowns can fill the 3D space as long as they don't sit on the same line or plane.</p>
 
 </div>
 </div>
@@ -699,26 +812,26 @@ $\begin{bmatrix}
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1.67763855 2.72747412 2.2695638 ]
-[7.09969632 8.37224789 6.81976514]
-[ 6.89371839 13.35502099 10.37470961]
-[4.93992439 6.06547284 4.75273683]
-[ 7.3809083  11.97058437  8.99081024]
-[5.11900468 8.2439746  8.44856071]
-[4.23623634 5.10209967 4.62271361]
-[13.38801854 20.14314952 17.14422637]
-[5.14643601 5.60648776 5.9971317 ]
-[3.22462361 4.2845177  4.80635395]
-[ 5.84249611 11.42063747 10.3426117 ]
-[4.60682698 8.70118317 8.63118543]
-[9.4153316  9.43774256 7.89502272]
-[13.53119932 19.64339519 16.56014928]
-[ 7.43002451 13.24529274 11.5433557 ]
-[10.03100649 12.7131274  11.56463466]
-[ 9.71428217 12.44477807  9.91446773]
-[15.98335818 22.67105713 19.36478084]
-[ 7.62890461 14.12441113 10.96336158]
-[3.19222775 6.09813427 6.3243463 ]
+<pre>[ 8.16805747 10.48024005  9.96809979]
+[9.06725154 9.2157439  9.14628651]
+[14.84467827 19.76751284 16.8031129 ]
+[5.48826464 8.7773201  7.60768914]
+[ 8.53018759 12.9082786  11.69127729]
+[ 6.78329217 10.20215186  8.40981525]
+[ 7.01421253 10.93880412 10.55733849]
+[ 9.05891997 14.74974623 13.42061373]
+[10.19869734 16.00490956 14.3459745 ]
+[9.10954836 9.6864028  9.56966219]
+[ 9.08434284 10.86306274  9.2531385 ]
+[12.55797136 18.34256625 15.99588544]
+[7.09998088 7.1142009  6.85118957]
+[ 7.3702     11.29534458 10.28193089]
+[ 6.29293053 10.82184999  8.30130941]
+[11.5767933  15.66537906 13.26443175]
+[6.67171881 7.37427105 7.18008504]
+[3.83815051 4.88854295 4.50169223]
+[4.79471557 8.08347503 6.72417967]
+[3.68698941 6.77141712 6.20886562]
 </pre>
 </div>
 </div>
