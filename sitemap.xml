@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://isaac-flath.github.io/IsaacFlath/jupyter/2020/05/05/JupyterNotebooks.html</loc>
+<loc>https://isaac-flath.github.io/Blog/jupyter/2020/05/05/JupyterNotebooks.html</loc>
 <lastmod>2020-05-05T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/IsaacFlath/about/</loc>
+<loc>https://isaac-flath.github.io/Blog/about/</loc>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/IsaacFlath/</loc>
+<loc>https://isaac-flath.github.io/Blog/</loc>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/IsaacFlath/search/</loc>
+<loc>https://isaac-flath.github.io/Blog/search/</loc>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/IsaacFlath/categories/</loc>
+<loc>https://isaac-flath.github.io/Blog/categories/</loc>
 </url>
 </urlset>
