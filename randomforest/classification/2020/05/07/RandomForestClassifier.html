@@ -189,8 +189,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Random-Forest-Model">Random Forest Model </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Initial-Model">Initial Model </a></li>
-<li class="toc-entry toc-h3"><a href="#Model-Tuning">Model Tuning </a></li>
-<li class="toc-entry toc-h3"><a href="#Grid-Search">Grid Search </a></li>
+<li class="toc-entry toc-h3"><a href="#Model-Tuning---Grid-Search">Model Tuning - Grid Search </a></li>
 <li class="toc-entry toc-h3"><a href="#Results">Results </a></li>
 </ul>
 </li>
@@ -1107,21 +1106,11 @@ Categories (3, object): [Third, First, Second]</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-Tuning">
-<a class="anchor" href="#Model-Tuning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Tuning<a class="anchor-link" href="#Model-Tuning"> </a>
+<h3 id="Model-Tuning---Grid-Search">
+<a class="anchor" href="#Model-Tuning---Grid-Search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Tuning - Grid Search<a class="anchor-link" href="#Model-Tuning---Grid-Search"> </a>
 </h3>
 <p>We made our first model, and it doesn't seem to predict as well as we would like.  Let's do something about that.</p>
 <p>We are going to do a grid search.  There are many more sophisticated ways to find parameters (maybe a future post), but the grid search is easy to understand.  Basically you pick some ranges, and you try them all to see what works best.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Grid-Search">
-<a class="anchor" href="#Grid-Search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grid Search<a class="anchor-link" href="#Grid-Search"> </a>
-</h3>
 <p>We will use the built in gridsearch.  All we need to do is define the range of parameters, and let it find the best model.</p>
 
 </div>
