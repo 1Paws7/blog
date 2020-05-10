@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://isaac-flath.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://isaac-flath.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-05-09T21:05:00-05:00</updated><id>https://isaac-flath.github.io/blog/feed.xml</id><title type="html">Isaac’s Blog</title><subtitle>A place for Isaac to write blog posts on things that interest him or those that he talks to.</subtitle><entry><title type="html">Predictive Customer Analytics (Part 2)</title><link href="https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2.html" rel="alternate" type="text/html" title="Predictive Customer Analytics (Part 2)" /><published>2020-05-10T00:00:00-05:00</published><updated>2020-05-10T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2</id><content type="html" xml:base="https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2.html">&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://isaac-flath.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://isaac-flath.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-05-09T21:31:17-05:00</updated><id>https://isaac-flath.github.io/blog/feed.xml</id><title type="html">Isaac’s Blog</title><subtitle>A place for Isaac to write blog posts on things that interest him or those that he talks to.</subtitle><entry><title type="html">Predictive Customer Analytics (Part 2)</title><link href="https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2.html" rel="alternate" type="text/html" title="Predictive Customer Analytics (Part 2)" /><published>2020-05-10T00:00:00-05:00</published><updated>2020-05-10T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2</id><content type="html" xml:base="https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2.html">&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
 
 &lt;p&gt;Customer Analytics is a valuable tool, but often the basics are overlooked. It can have a huge impact, and it doesn’t always mean complex modeling.  It always starts with the basics.&lt;/p&gt;
 
@@ -191,7 +191,402 @@ Maximum value in series = 48&lt;/p&gt;
   &lt;li&gt;We can determine who our most valuable customers are.  Typically without measures, we remember the big purchases.  But a regular purchaser that doesn’t make big purchases may be bringing us more revenue.  Understanding which customers are most likely to be the most profitable is crucial and can help us determine pricing tiers for customers or determine customer loyalty programs.&lt;/li&gt;
   &lt;li&gt;We can identify low performing groups and create a strategy to get more penetration into those customers.  Maybe for those customers we can send them surveys.  Maybe we can set up a forum and do 6 month surveys where we work and collaborate with them regularly.  This can help give insight into why they don’t purchase much, as well as be a good sales opportunity.  We can also try to take action to take the low performing customers and get them to increase revenue through promotions or other incentives.&lt;/li&gt;
   &lt;li&gt;We can take the high performing customers and make sure that they know they are appreciated.  Whether it’s a can of cashews over the holidays, or having a sales person reach out to talk once a month, building that relationship can really build customer loyalty.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Jupyter Notebook Tutorial</title><link href="https://isaac-flath.github.io/blog/jupyter/2020/05/09/JupyterNotebooks.html" rel="alternate" type="text/html" title="Jupyter Notebook Tutorial" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/jupyter/2020/05/09/JupyterNotebooks</id><content type="html" xml:base="https://isaac-flath.github.io/blog/jupyter/2020/05/09/JupyterNotebooks.html">&lt;!--
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Gradient Descent for Linear Regression</title><link href="https://isaac-flath.github.io/blog/optimization/gradientdescent/2020/05/09/GradientDescentforLinearRegression.html" rel="alternate" type="text/html" title="Gradient Descent for Linear Regression" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/optimization/gradientdescent/2020/05/09/GradientDescentforLinearRegression</id><content type="html" xml:base="https://isaac-flath.github.io/blog/optimization/gradientdescent/2020/05/09/GradientDescentforLinearRegression.html">&lt;!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/GradientDescentforLinearRegression.ipynb
+--&gt;
+
+&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
+        
+    
+    
+&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+
+&lt;/div&gt;
+    
+
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;The goal of linear regression is to find parameter values that fit a linear function to data points.  The goodness of fit is measured by a cost function.  The lower the cost, the better the model.  Gradient Descent is a method to minimize a cost function.  Gradient descent is a widely used tool and is used frequently in tuning predictive models.  It’s important to understand the method so you can apply it to various models and are not limited to using black box models.&lt;/p&gt;
+&lt;p&gt;As I just mentioned, gradient descent is a method to reduce a cost function.  To understand how to minimize a cost function, you need to understand how cost is calculated.  For this post I will be using a very simple example; linear regression with one feature, two data points, and two regression coefficients.  I will use the sum of squares cost function to take the predicted line and slowly change the regression coefficients until the line passes through both points.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Isaac-Flath/blog/blob/master/_notebooks/my_icons/gradientdescent-graph.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;In this example we could easily draw a line through the points without using gradient descent, but if we had more data points this would get trickier.  In the table below we can see what the data looks like that we are working with.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Isaac-Flath/blog/blob/master/_notebooks/my_icons/gradientdescent-table.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;The tree below illustrates how to solve for cost as well as how to improve the values of 𝜃 to minimize cost.  In the illustration above, J = a1 + a2 is the cost function we want to minimize.  As we can see, if the regression coefficients (𝜃0+ 𝜃1) do not give a good fit, then the difference between our predicted values and observed values will be large and we will have a high cost (J).  For low values, we will have a low cost (J).  The figure below shows us how to calculate cost from the regression coefficients (𝜃0 and 𝜃1).&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Isaac-Flath/blog/blob/master/_notebooks/my_icons/gradient-descent-figure.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;The second thing this chart shows you is how to improve values of theta.  We used the formulas in the boxes to evaluate J, so now we will use the values on the edges to improve the parameter values.  Each regression coefficient has a path up to the cost function.  You get a path value for each 𝜃 on the tree by multiplying the edge values along that path.  For example:&lt;/p&gt;
+&lt;p&gt;$𝜃_1\; path\;value = x^1 (y^1_{pred} - y^1_{obs}) (1) + x^2 (y^2_{pred} - y^2_{obs}) (1)$&lt;/p&gt;
+&lt;p&gt;The last step is to improve the value of 𝜃.  In order to improve the value of 𝜃, we need to multiply the path value by 𝛼, and subtract that from that 𝜃.  𝛼 is a value that determines how large the increments will be taken during optimization.  If you pick an 𝛼 value that is is too large, you risk missing the local optima.  If you choose an 𝛼 value that is too small you will be very accurate, but it will be more computationally expensive.
+With more data points there would be more edges originating at J, and with more features there would be more thetas originating from the predicted values, but the same concept can be applied to these more complicated examples.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Isaac Flath</name></author><summary type="html"></summary></entry><entry><title type="html">Descriptive Customer Analytics (Part 1)</title><link href="https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1.html" rel="alternate" type="text/html" title="Descriptive Customer Analytics (Part 1)" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1</id><content type="html" xml:base="https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1.html">&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;Customer Analytics is a valuable tool, but often the basics are overlooked. It can have a huge impact, and it doesn’t always mean complex modeling.  It always starts with the basics.  Because customer analytics can make such a big impact, I am going to break this into several posts.&lt;/p&gt;
+
+&lt;p&gt;In this post (Part 1) I am going to explain a basic descriptive customer analytics framework and how use it to identify the current state.  This understanding allows us to conduct A/B testing so we can measure how our actions impact revenue and by how much.  There are many ways to do this, this is just one of them.&lt;/p&gt;
+
+&lt;p&gt;In Part 2 I’ll talk about how to build on the descriptive framework to create a predictive model.  A predictive model allows companies to plan proactively instead of reactively.&lt;/p&gt;
+
+&lt;h1 id=&quot;background&quot;&gt;Background:&lt;/h1&gt;
+
+&lt;p&gt;Many companies rely on experience and basic summarizing of historical statistics to make decisions.  While both of these are useful tools, a powerful way to successfully sustain long term revenue growth is to add customer analytics to their tool belt.  In this post I am discussing the starting point for analytics, descriptive analytics.&lt;/p&gt;
+
+&lt;p&gt;An easy and solid starting point for descriptive analytics is a RFM (Recency, Frequency, Monetary Value) model.  A primary advantage to this is the only data you need is purchase history for each customer, which is information that almost every company tracks.  I’ve outlined the three main steps to creating this framework and using it to increase revenue.&lt;/p&gt;
+
+&lt;h1 id=&quot;determine-length-of-customer-buying-cycle&quot;&gt;Determine length of customer buying cycle:&lt;/h1&gt;
+
+&lt;p&gt;The first step is to determine what time range is a good time range to use for a buying cycle.  For a grocery store, maybe we say typically people go grocery shopping once a week.  In that scenario we would use 1 week as our time range for our cycle.  However a company that prints business cards may find a much longer time frame as customers tend to buy 1,000 and repurchase when they get low.  For this example we could use a 6 month cycle.  I encourage people to explore their data and pick a time range based on intuition.  There are better and more complicated ways to figure out this time range, but I encourage people to demonstrate results and revenue growth before circling back with more resources and support from executive management.&lt;/p&gt;
+
+&lt;h1 id=&quot;calculate-descriptive-customer-metrics&quot;&gt;Calculate descriptive customer metrics:&lt;/h1&gt;
+
+&lt;p&gt;Let’s say we choose a 1 month cycle.  The next step is to create and fill in a table to get frequency and monetary Value.  In the table below I outline how we calculate both of those KPIs (Key Performance Indicators).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;January&lt;/th&gt;
+      &lt;th&gt;February&lt;/th&gt;
+      &lt;th&gt;March&lt;/th&gt;
+      &lt;th&gt;Frequency&lt;/th&gt;
+      &lt;th&gt;Monetary Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Example&lt;/td&gt;
+      &lt;td&gt;Rev&lt;/td&gt;
+      &lt;td&gt;Rev&lt;/td&gt;
+      &lt;td&gt;Rev&lt;/td&gt;
+      &lt;td&gt;# of slots purchased in&lt;/td&gt;
+      &lt;td&gt;Average Monetary Value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer A&lt;/td&gt;
+      &lt;td&gt;$102&lt;/td&gt;
+      &lt;td&gt;$60&lt;/td&gt;
+      &lt;td&gt;$75&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;=($102+$60+$75) / 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer B&lt;/td&gt;
+      &lt;td&gt;$97&lt;/td&gt;
+      &lt;td&gt;$85&lt;/td&gt;
+      &lt;td&gt;$0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;=($85+97) / 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer C&lt;/td&gt;
+      &lt;td&gt;$0&lt;/td&gt;
+      &lt;td&gt;$9852&lt;/td&gt;
+      &lt;td&gt;$0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;=($9,852) / 1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Once this is done add another column for Recency and fill that in with how long since that last purchase.  This can be days, hours, or seconds since last purchase depending on how far apart customer purchases typically are.  For this simplified version we will use days.  We end up with a table like this:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;Recency&lt;/th&gt;
+      &lt;th&gt;Frequency&lt;/th&gt;
+      &lt;th&gt;Monetary Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer A&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;$79&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer B&lt;/td&gt;
+      &lt;td&gt;35&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;$91&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer C&lt;/td&gt;
+      &lt;td&gt;48&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;$9852&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;conduct-ab-testing&quot;&gt;Conduct A/B testing:&lt;/h1&gt;
+
+&lt;p&gt;Now that we have three metrics (RFM) that describe customer buying patterns, we can start using them to run experiments to drive revenue growth.  A/B testing is a simple experiment that you can run to compare two things. You split your customers into two group and make no change to what you are doing to group A, but do something different in group B.  By doing this we can compare the revenue of the two groups to see what impact our efforts had.  If B is better, we will apply that action to the entire customer base.  If not, we scrap the idea and move on.  This is a never-ending process of  testing new ideas.&lt;/p&gt;
+
+&lt;h1 id=&quot;heres-a-few-ideas-for-ab-tests-using-rfm-to-get-you-started&quot;&gt;Here’s a few ideas for A/B tests using RFM to get you started:&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Call every customer in group B to see how that impacts revenue.  Does this increase Frequency (F) or average Monetary Value (M) of orders?  Is it worth the additional resources?&lt;/li&gt;
+  &lt;li&gt;Send a marketing email blast to everyone in group B.  How does this change group B’s buying patterns?&lt;/li&gt;
+  &lt;li&gt;What impact does sending a one-time-only 5\% off coupon have?&lt;/li&gt;
+  &lt;li&gt;If we raise the price by 5\% in group B, what is the effect on revenue?  This is especially useful because we can run limited experiments and gauge reaction of price hikes without angering every customer.&lt;/li&gt;
+  &lt;li&gt;If we raise the price on a product that is nearing the end of its product life cycle, do sales increase on the newly released product?  Does a price hike on old products encourage customers to buy newer versions?&lt;/li&gt;
+  &lt;li&gt;Send group A customers to the current website and group B customers to a new website layout.  Monitor sales, traffic, and clicks on each site.  This can help determine the better layout.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Elimination with Matrices (18.06_L2)</title><link href="https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices.html" rel="alternate" type="text/html" title="Elimination with Matrices (18.06_L2)" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices</id><content type="html" xml:base="https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices.html">&lt;!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/18.06_2_EliminationWithMatrices.ipynb
+--&gt;
+
+&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
+        
+    
+    
+&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+
+&lt;/div&gt;
+    
+
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h1 id=&quot;Motivation&quot;&gt;Motivation&lt;a class=&quot;anchor-link&quot; href=&quot;#Motivation&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;One of my goals is to understand more deeply what Neural Networks are doing.  Another is to have an easier time understanding and implementing cutting edge academic papers.  In order to work toward those goals, I am revisiting the Math behind Neural Networks.  This time my goal is to understand intuitively every piece of the material forward and backward - rather than to pass a course on a deadline.&lt;/p&gt;
+&lt;p&gt;This blog post will be my notes about Lecture 2 from the following course:&lt;/p&gt;
+&lt;p&gt;Gilbert Strang. 18.06 Linear Algebra. Spring 2010. Massachusetts Institute of Technology: MIT OpenCourseWare, &lt;a href=&quot;https://ocw.mit.edu&quot;&gt;https://ocw.mit.edu&lt;/a&gt;. License: Creative Commons BY-NC-SA.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h1 id=&quot;Goal&quot;&gt;Goal&lt;a class=&quot;anchor-link&quot; href=&quot;#Goal&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The goal is to solve N equations with N unknowns, just like it was with lecture 1.  In the first Lecture it was about understanding how to solve them intuitively with linear combinations and matrix multiplication.  In reality, that is not a scalable choice when you get to higher and higher dimensions.  We need to be able to express these concepts in matrices and be more comfortable with that language and operations..&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h1 id=&quot;Matrix-Form&quot;&gt;Matrix Form&lt;a class=&quot;anchor-link&quot; href=&quot;#Matrix-Form&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;As a recap, we can express a system of equations by listing the equations.  x&lt;/p&gt;
+&lt;p&gt;$x+2y+z=2$&lt;/p&gt;
+&lt;p&gt;$3x+8y+z=12$&lt;/p&gt;
+&lt;p&gt;$4y+z=2$&lt;/p&gt;
+&lt;p&gt;We can write the same thing in matrix form using the formula $Ax=b$.  The matrix A is from the system of equation above.&lt;/p&gt;
+&lt;p&gt;$A = \begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h1 id=&quot;Elimination&quot;&gt;Elimination&lt;a class=&quot;anchor-link&quot; href=&quot;#Elimination&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The general idea in elimination is to isolate variables so we can solve the equation.  For example, if we have 0x + 0y + 1z = 10, it is very easy to solve for z.  We can then plug it into another equation in the series that has z and 1 other unknown to get another value, and so on and so forth.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;$E_{21}$&quot;&gt;$E_{21}$&lt;a class=&quot;anchor-link&quot; href=&quot;#$E_{21}$&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We are going to start by eliminating the first variable in the second row.  Row 2, column 1.  This would leave the second row with only 2 unknowns.&lt;/p&gt;
+&lt;p&gt;The way we do this is we subtract row 1 from row 2.  If we substract 3 * 1 from 3, we get 0, so 3 will be the multiplier.&lt;/p&gt;
+&lt;p&gt;$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}
+=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;$E_{31}$&quot;&gt;$E_{31}$&lt;a class=&quot;anchor-link&quot; href=&quot;#$E_{31}$&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We then move on to row 3, column 1.  Lucky for us it's already 0 so we can skip this step&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;$E_{32}$&quot;&gt;$E_{32}$&lt;a class=&quot;anchor-link&quot; href=&quot;#$E_{32}$&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We now move on to row 3, column 2.  If we can get this to 0, then we have 1 unknown in that column.  That's what we want as that's easily solvable.&lt;/p&gt;
+&lt;p&gt;$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}
+=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;How-can-this-fail?&quot;&gt;How can this fail?&lt;a class=&quot;anchor-link&quot; href=&quot;#How-can-this-fail?&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A 0 cannot be in one of the pivot spots.  The pivot positions are the diagonals.  If that happens, elimination will fail.  If you think about it, a  0 being in the pivot spot means that the left side of the equation is 0.  Either the right side is also 0 and it gives you no information, or the right side is not 0 and there is no solution (ie 2 = 0 is False).&lt;/p&gt;
+&lt;p&gt;Of course, there are some tricks that can be added to minimize failures.  The most common of these are row exchanges.  By swapping the order of the rows, you can potentially solve an equation that would have failed in the original order.&lt;/p&gt;
+&lt;p&gt;For example, if I were to exchange the 2nd and 3rd rows I would multiply by the following matrix.&lt;/p&gt;
+&lt;p&gt;$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;0&amp;amp;1\\0&amp;amp;1&amp;amp;0\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h1 id=&quot;Back-Substitution&quot;&gt;Back Substitution&lt;a class=&quot;anchor-link&quot; href=&quot;#Back-Substitution&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Let's recap the steps that were taken.  We started with A and through elimination in 2 steps we ended with a new matrix.&lt;/p&gt;
+&lt;p&gt;$A =&amp;gt; \begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix} =&amp;gt; \begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix} =&amp;gt; \begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix} =&amp;gt; U$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;Finish-the-Equation&quot;&gt;Finish the Equation&lt;a class=&quot;anchor-link&quot; href=&quot;#Finish-the-Equation&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You may have realized these matrices represented the left side of the equation.  You may have wondered how we can modify the left side of the equation while leaving the right side alone?  The answer is that we cannot.  What is done on the left side must be applied to the right side.  Let's do that now.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;We have done 2 transformations.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The first transformation was subtracting 3 of the first row from the second.&lt;/li&gt;
+&lt;li&gt;The second transformation was subracting 2 of the second row from the third.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let's do that to the the right side&lt;/p&gt;
+&lt;p&gt;b =&amp;gt; $\begin{bmatrix}2\\12\\2\end{bmatrix} =&amp;gt; \begin{bmatrix}2\\6\\2\end{bmatrix} =&amp;gt;
+\begin{bmatrix}2\\6\\-10\end{bmatrix} =&amp;gt; c$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;Let's put the left and right side of the equations together to see what it looks like.&lt;/p&gt;
+&lt;p&gt;$Ux = C$&lt;/p&gt;
+&lt;p&gt;$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\6\\-10\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h1 id=&quot;Final-Solution&quot;&gt;Final Solution&lt;a class=&quot;anchor-link&quot; href=&quot;#Final-Solution&quot;&gt; &lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;Intuitive-Solution&quot;&gt;Intuitive Solution&lt;a class=&quot;anchor-link&quot; href=&quot;#Intuitive-Solution&quot;&gt; &lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;Great!  Let's translate the $Ux=C$ matrix above back to our systems of equations view just to see if we can see how this transformation helps us.&lt;/p&gt;
+&lt;p&gt;$x + 2y + z = 2$&lt;/p&gt;
+&lt;p&gt;$2y - 2z = 6$&lt;/p&gt;
+&lt;p&gt;$5z = -10$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;When we look at it here, we can solve them with some simple algebra starting from the bottom equation.&lt;/p&gt;
+&lt;p&gt;$5z = -10 \;\;\;\mathbf{=&amp;gt;}\;\;\; z = -10/5 \;\;\;\mathbf{=&amp;gt;}\;\;\; z = -2$&lt;/p&gt;
+&lt;p&gt;$2y - 2z = 6 \;\;\;\mathbf{=&amp;gt;}\;\;\; 2y - 2(-2) = 6 \;\;\;\mathbf{=&amp;gt;}\;\;\; 2y + 4 = 6 \;\;\;\mathbf{=&amp;gt;}\;\;\; 2y = 2 \;\;\;\mathbf{=&amp;gt;}\;\;\; y = 1$&lt;/p&gt;
+&lt;p&gt;$x+2y+z=2 \;\;\;\mathbf{=&amp;gt;}\;\;\;x+2-2=2$$x+2y+z=2 \;\;\;\mathbf{=&amp;gt;}\;\;\;x=2$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h2 id=&quot;Matrix-Solution&quot;&gt;Matrix Solution&lt;a class=&quot;anchor-link&quot; href=&quot;#Matrix-Solution&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So first we should ask if we have an intuitive solution, why bother with doing the whole thing in matrix format?  Isn't it the same thing?&lt;/p&gt;
+&lt;p&gt;And yes, we will be doing the same thing.  The reason is scalability and ability to transfer to N equation and N unknowns.  There's a limit to what can be done by hand, and matrix form allows for easier scalability.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h3 id=&quot;Recap&quot;&gt;Recap&lt;a class=&quot;anchor-link&quot; href=&quot;#Recap&quot;&gt; &lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We did several steps intuitively.  Let's recap our elimination steps from above&lt;/p&gt;
+&lt;p&gt;$E_{21}$ step
+$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}
+=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}$&lt;/p&gt;
+&lt;p&gt;$E_{32}$ step
+$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}
+=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;h3 id=&quot;Simplify-into-1-step&quot;&gt;Simplify into 1 step&lt;a class=&quot;anchor-link&quot; href=&quot;#Simplify-into-1-step&quot;&gt; &lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Great!  Now let's just combine these so we only have 1 equation.&lt;/p&gt;
+&lt;p&gt;$E_{21}E_{32}A=U$
+$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}=
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}
+$&lt;/p&gt;
+&lt;p&gt;Now let's simplify this by multiplying and combining my $E_{21}$ and $E_{31}$ matrices together.  We will call the result $E$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
+&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
+&lt;p&gt;$E_{21}E_{32}=E$
+$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix} = 
+\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\6&amp;amp;-2&amp;amp;1\end{bmatrix}$&lt;/p&gt;
+&lt;p&gt;Great!  Now we can use this to simplify our formula.&lt;/p&gt;
+&lt;p&gt;$EA=U$
+$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\6&amp;amp;-2&amp;amp;1\end{bmatrix}
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}=
+\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Isaac Flath</name></author><summary type="html"></summary></entry><entry><title type="html">Jupyter Notebook Tutorial</title><link href="https://isaac-flath.github.io/blog/jupyter/2020/05/09/JupyterNotebooks.html" rel="alternate" type="text/html" title="Jupyter Notebook Tutorial" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/jupyter/2020/05/09/JupyterNotebooks</id><content type="html" xml:base="https://isaac-flath.github.io/blog/jupyter/2020/05/09/JupyterNotebooks.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -1121,401 +1516,6 @@ b = np.array(np.random.rand(512,512))
 &lt;li&gt;Navigate and edit your code in a standard text editor or IDE, and export any changes automatically back into your notebooks&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I reccomend checking them out for more detail &lt;a href=&quot;https://github.com/fastai/nbdev&quot;&gt;https://github.com/fastai/nbdev&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name>Isaac Flath</name></author><summary type="html"></summary></entry><entry><title type="html">Descriptive Customer Analytics (Part 1)</title><link href="https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1.html" rel="alternate" type="text/html" title="Descriptive Customer Analytics (Part 1)" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1</id><content type="html" xml:base="https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1.html">&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
-
-&lt;p&gt;Customer Analytics is a valuable tool, but often the basics are overlooked. It can have a huge impact, and it doesn’t always mean complex modeling.  It always starts with the basics.  Because customer analytics can make such a big impact, I am going to break this into several posts.&lt;/p&gt;
-
-&lt;p&gt;In this post (Part 1) I am going to explain a basic descriptive customer analytics framework and how use it to identify the current state.  This understanding allows us to conduct A/B testing so we can measure how our actions impact revenue and by how much.  There are many ways to do this, this is just one of them.&lt;/p&gt;
-
-&lt;p&gt;In Part 2 I’ll talk about how to build on the descriptive framework to create a predictive model.  A predictive model allows companies to plan proactively instead of reactively.&lt;/p&gt;
-
-&lt;h1 id=&quot;background&quot;&gt;Background:&lt;/h1&gt;
-
-&lt;p&gt;Many companies rely on experience and basic summarizing of historical statistics to make decisions.  While both of these are useful tools, a powerful way to successfully sustain long term revenue growth is to add customer analytics to their tool belt.  In this post I am discussing the starting point for analytics, descriptive analytics.&lt;/p&gt;
-
-&lt;p&gt;An easy and solid starting point for descriptive analytics is a RFM (Recency, Frequency, Monetary Value) model.  A primary advantage to this is the only data you need is purchase history for each customer, which is information that almost every company tracks.  I’ve outlined the three main steps to creating this framework and using it to increase revenue.&lt;/p&gt;
-
-&lt;h1 id=&quot;determine-length-of-customer-buying-cycle&quot;&gt;Determine length of customer buying cycle:&lt;/h1&gt;
-
-&lt;p&gt;The first step is to determine what time range is a good time range to use for a buying cycle.  For a grocery store, maybe we say typically people go grocery shopping once a week.  In that scenario we would use 1 week as our time range for our cycle.  However a company that prints business cards may find a much longer time frame as customers tend to buy 1,000 and repurchase when they get low.  For this example we could use a 6 month cycle.  I encourage people to explore their data and pick a time range based on intuition.  There are better and more complicated ways to figure out this time range, but I encourage people to demonstrate results and revenue growth before circling back with more resources and support from executive management.&lt;/p&gt;
-
-&lt;h1 id=&quot;calculate-descriptive-customer-metrics&quot;&gt;Calculate descriptive customer metrics:&lt;/h1&gt;
-
-&lt;p&gt;Let’s say we choose a 1 month cycle.  The next step is to create and fill in a table to get frequency and monetary Value.  In the table below I outline how we calculate both of those KPIs (Key Performance Indicators).&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;January&lt;/th&gt;
-      &lt;th&gt;February&lt;/th&gt;
-      &lt;th&gt;March&lt;/th&gt;
-      &lt;th&gt;Frequency&lt;/th&gt;
-      &lt;th&gt;Monetary Value&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Example&lt;/td&gt;
-      &lt;td&gt;Rev&lt;/td&gt;
-      &lt;td&gt;Rev&lt;/td&gt;
-      &lt;td&gt;Rev&lt;/td&gt;
-      &lt;td&gt;# of slots purchased in&lt;/td&gt;
-      &lt;td&gt;Average Monetary Value&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Customer A&lt;/td&gt;
-      &lt;td&gt;$102&lt;/td&gt;
-      &lt;td&gt;$60&lt;/td&gt;
-      &lt;td&gt;$75&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;=($102+$60+$75) / 3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Customer B&lt;/td&gt;
-      &lt;td&gt;$97&lt;/td&gt;
-      &lt;td&gt;$85&lt;/td&gt;
-      &lt;td&gt;$0&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;=($85+97) / 2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Customer C&lt;/td&gt;
-      &lt;td&gt;$0&lt;/td&gt;
-      &lt;td&gt;$9852&lt;/td&gt;
-      &lt;td&gt;$0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;=($9,852) / 1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Once this is done add another column for Recency and fill that in with how long since that last purchase.  This can be days, hours, or seconds since last purchase depending on how far apart customer purchases typically are.  For this simplified version we will use days.  We end up with a table like this:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;Recency&lt;/th&gt;
-      &lt;th&gt;Frequency&lt;/th&gt;
-      &lt;th&gt;Monetary Value&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Customer A&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;$79&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Customer B&lt;/td&gt;
-      &lt;td&gt;35&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;$91&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Customer C&lt;/td&gt;
-      &lt;td&gt;48&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;$9852&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 id=&quot;conduct-ab-testing&quot;&gt;Conduct A/B testing:&lt;/h1&gt;
-
-&lt;p&gt;Now that we have three metrics (RFM) that describe customer buying patterns, we can start using them to run experiments to drive revenue growth.  A/B testing is a simple experiment that you can run to compare two things. You split your customers into two group and make no change to what you are doing to group A, but do something different in group B.  By doing this we can compare the revenue of the two groups to see what impact our efforts had.  If B is better, we will apply that action to the entire customer base.  If not, we scrap the idea and move on.  This is a never-ending process of  testing new ideas.&lt;/p&gt;
-
-&lt;h1 id=&quot;heres-a-few-ideas-for-ab-tests-using-rfm-to-get-you-started&quot;&gt;Here’s a few ideas for A/B tests using RFM to get you started:&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Call every customer in group B to see how that impacts revenue.  Does this increase Frequency (F) or average Monetary Value (M) of orders?  Is it worth the additional resources?&lt;/li&gt;
-  &lt;li&gt;Send a marketing email blast to everyone in group B.  How does this change group B’s buying patterns?&lt;/li&gt;
-  &lt;li&gt;What impact does sending a one-time-only 5\% off coupon have?&lt;/li&gt;
-  &lt;li&gt;If we raise the price by 5\% in group B, what is the effect on revenue?  This is especially useful because we can run limited experiments and gauge reaction of price hikes without angering every customer.&lt;/li&gt;
-  &lt;li&gt;If we raise the price on a product that is nearing the end of its product life cycle, do sales increase on the newly released product?  Does a price hike on old products encourage customers to buy newer versions?&lt;/li&gt;
-  &lt;li&gt;Send group A customers to the current website and group B customers to a new website layout.  Monitor sales, traffic, and clicks on each site.  This can help determine the better layout.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Elimination with Matrices (18.06_L2)</title><link href="https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices.html" rel="alternate" type="text/html" title="Elimination with Matrices (18.06_L2)" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices</id><content type="html" xml:base="https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices.html">&lt;!--
-#################################################
-### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
-#################################################
-# file to edit: _notebooks/18.06_2_EliminationWithMatrices.ipynb
---&gt;
-
-&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
-        
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Motivation&quot;&gt;Motivation&lt;a class=&quot;anchor-link&quot; href=&quot;#Motivation&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;One of my goals is to understand more deeply what Neural Networks are doing.  Another is to have an easier time understanding and implementing cutting edge academic papers.  In order to work toward those goals, I am revisiting the Math behind Neural Networks.  This time my goal is to understand intuitively every piece of the material forward and backward - rather than to pass a course on a deadline.&lt;/p&gt;
-&lt;p&gt;This blog post will be my notes about Lecture 2 from the following course:&lt;/p&gt;
-&lt;p&gt;Gilbert Strang. 18.06 Linear Algebra. Spring 2010. Massachusetts Institute of Technology: MIT OpenCourseWare, &lt;a href=&quot;https://ocw.mit.edu&quot;&gt;https://ocw.mit.edu&lt;/a&gt;. License: Creative Commons BY-NC-SA.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Goal&quot;&gt;Goal&lt;a class=&quot;anchor-link&quot; href=&quot;#Goal&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The goal is to solve N equations with N unknowns, just like it was with lecture 1.  In the first Lecture it was about understanding how to solve them intuitively with linear combinations and matrix multiplication.  In reality, that is not a scalable choice when you get to higher and higher dimensions.  We need to be able to express these concepts in matrices and be more comfortable with that language and operations..&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Matrix-Form&quot;&gt;Matrix Form&lt;a class=&quot;anchor-link&quot; href=&quot;#Matrix-Form&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;As a recap, we can express a system of equations by listing the equations.  x&lt;/p&gt;
-&lt;p&gt;$x+2y+z=2$&lt;/p&gt;
-&lt;p&gt;$3x+8y+z=12$&lt;/p&gt;
-&lt;p&gt;$4y+z=2$&lt;/p&gt;
-&lt;p&gt;We can write the same thing in matrix form using the formula $Ax=b$.  The matrix A is from the system of equation above.&lt;/p&gt;
-&lt;p&gt;$A = \begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Elimination&quot;&gt;Elimination&lt;a class=&quot;anchor-link&quot; href=&quot;#Elimination&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The general idea in elimination is to isolate variables so we can solve the equation.  For example, if we have 0x + 0y + 1z = 10, it is very easy to solve for z.  We can then plug it into another equation in the series that has z and 1 other unknown to get another value, and so on and so forth.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;$E_{21}$&quot;&gt;$E_{21}$&lt;a class=&quot;anchor-link&quot; href=&quot;#$E_{21}$&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We are going to start by eliminating the first variable in the second row.  Row 2, column 1.  This would leave the second row with only 2 unknowns.&lt;/p&gt;
-&lt;p&gt;The way we do this is we subtract row 1 from row 2.  If we substract 3 * 1 from 3, we get 0, so 3 will be the multiplier.&lt;/p&gt;
-&lt;p&gt;$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}
-=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;$E_{31}$&quot;&gt;$E_{31}$&lt;a class=&quot;anchor-link&quot; href=&quot;#$E_{31}$&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We then move on to row 3, column 1.  Lucky for us it's already 0 so we can skip this step&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;$E_{32}$&quot;&gt;$E_{32}$&lt;a class=&quot;anchor-link&quot; href=&quot;#$E_{32}$&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We now move on to row 3, column 2.  If we can get this to 0, then we have 1 unknown in that column.  That's what we want as that's easily solvable.&lt;/p&gt;
-&lt;p&gt;$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}
-=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;How-can-this-fail?&quot;&gt;How can this fail?&lt;a class=&quot;anchor-link&quot; href=&quot;#How-can-this-fail?&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A 0 cannot be in one of the pivot spots.  The pivot positions are the diagonals.  If that happens, elimination will fail.  If you think about it, a  0 being in the pivot spot means that the left side of the equation is 0.  Either the right side is also 0 and it gives you no information, or the right side is not 0 and there is no solution (ie 2 = 0 is False).&lt;/p&gt;
-&lt;p&gt;Of course, there are some tricks that can be added to minimize failures.  The most common of these are row exchanges.  By swapping the order of the rows, you can potentially solve an equation that would have failed in the original order.&lt;/p&gt;
-&lt;p&gt;For example, if I were to exchange the 2nd and 3rd rows I would multiply by the following matrix.&lt;/p&gt;
-&lt;p&gt;$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;0&amp;amp;1\\0&amp;amp;1&amp;amp;0\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Back-Substitution&quot;&gt;Back Substitution&lt;a class=&quot;anchor-link&quot; href=&quot;#Back-Substitution&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Let's recap the steps that were taken.  We started with A and through elimination in 2 steps we ended with a new matrix.&lt;/p&gt;
-&lt;p&gt;$A =&amp;gt; \begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix} =&amp;gt; \begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix} =&amp;gt; \begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix} =&amp;gt; U$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Finish-the-Equation&quot;&gt;Finish the Equation&lt;a class=&quot;anchor-link&quot; href=&quot;#Finish-the-Equation&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You may have realized these matrices represented the left side of the equation.  You may have wondered how we can modify the left side of the equation while leaving the right side alone?  The answer is that we cannot.  What is done on the left side must be applied to the right side.  Let's do that now.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;We have done 2 transformations.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The first transformation was subtracting 3 of the first row from the second.&lt;/li&gt;
-&lt;li&gt;The second transformation was subracting 2 of the second row from the third.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Let's do that to the the right side&lt;/p&gt;
-&lt;p&gt;b =&amp;gt; $\begin{bmatrix}2\\12\\2\end{bmatrix} =&amp;gt; \begin{bmatrix}2\\6\\2\end{bmatrix} =&amp;gt;
-\begin{bmatrix}2\\6\\-10\end{bmatrix} =&amp;gt; c$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;Let's put the left and right side of the equations together to see what it looks like.&lt;/p&gt;
-&lt;p&gt;$Ux = C$&lt;/p&gt;
-&lt;p&gt;$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\6\\-10\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Final-Solution&quot;&gt;Final Solution&lt;a class=&quot;anchor-link&quot; href=&quot;#Final-Solution&quot;&gt; &lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Intuitive-Solution&quot;&gt;Intuitive Solution&lt;a class=&quot;anchor-link&quot; href=&quot;#Intuitive-Solution&quot;&gt; &lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;Great!  Let's translate the $Ux=C$ matrix above back to our systems of equations view just to see if we can see how this transformation helps us.&lt;/p&gt;
-&lt;p&gt;$x + 2y + z = 2$&lt;/p&gt;
-&lt;p&gt;$2y - 2z = 6$&lt;/p&gt;
-&lt;p&gt;$5z = -10$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;When we look at it here, we can solve them with some simple algebra starting from the bottom equation.&lt;/p&gt;
-&lt;p&gt;$5z = -10 \;\;\;\mathbf{=&amp;gt;}\;\;\; z = -10/5 \;\;\;\mathbf{=&amp;gt;}\;\;\; z = -2$&lt;/p&gt;
-&lt;p&gt;$2y - 2z = 6 \;\;\;\mathbf{=&amp;gt;}\;\;\; 2y - 2(-2) = 6 \;\;\;\mathbf{=&amp;gt;}\;\;\; 2y + 4 = 6 \;\;\;\mathbf{=&amp;gt;}\;\;\; 2y = 2 \;\;\;\mathbf{=&amp;gt;}\;\;\; y = 1$&lt;/p&gt;
-&lt;p&gt;$x+2y+z=2 \;\;\;\mathbf{=&amp;gt;}\;\;\;x+2-2=2$$x+2y+z=2 \;\;\;\mathbf{=&amp;gt;}\;\;\;x=2$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Matrix-Solution&quot;&gt;Matrix Solution&lt;a class=&quot;anchor-link&quot; href=&quot;#Matrix-Solution&quot;&gt; &lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So first we should ask if we have an intuitive solution, why bother with doing the whole thing in matrix format?  Isn't it the same thing?&lt;/p&gt;
-&lt;p&gt;And yes, we will be doing the same thing.  The reason is scalability and ability to transfer to N equation and N unknowns.  There's a limit to what can be done by hand, and matrix form allows for easier scalability.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Recap&quot;&gt;Recap&lt;a class=&quot;anchor-link&quot; href=&quot;#Recap&quot;&gt; &lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We did several steps intuitively.  Let's recap our elimination steps from above&lt;/p&gt;
-&lt;p&gt;$E_{21}$ step
-$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}
-=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}$&lt;/p&gt;
-&lt;p&gt;$E_{32}$ step
-$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;4&amp;amp;1\end{bmatrix}
-=\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Simplify-into-1-step&quot;&gt;Simplify into 1 step&lt;a class=&quot;anchor-link&quot; href=&quot;#Simplify-into-1-step&quot;&gt; &lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Great!  Now let's just combine these so we only have 1 equation.&lt;/p&gt;
-&lt;p&gt;$E_{21}E_{32}A=U$
-$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}=
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}
-$&lt;/p&gt;
-&lt;p&gt;Now let's simplify this by multiplying and combining my $E_{21}$ and $E_{31}$ matrices together.  We will call the result $E$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;$E_{21}E_{32}=E$
-$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\0&amp;amp;1&amp;amp;0\\0&amp;amp;-2&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\0&amp;amp;0&amp;amp;1\end{bmatrix} = 
-\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\6&amp;amp;-2&amp;amp;1\end{bmatrix}$&lt;/p&gt;
-&lt;p&gt;Great!  Now we can use this to simplify our formula.&lt;/p&gt;
-&lt;p&gt;$EA=U$
-$\begin{bmatrix}1&amp;amp;0&amp;amp;0\\-3&amp;amp;1&amp;amp;0\\6&amp;amp;-2&amp;amp;1\end{bmatrix}
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}=
-\begin{bmatrix}1&amp;amp;2&amp;amp;1\\0&amp;amp;2&amp;amp;-2\\0&amp;amp;0&amp;amp;5\end{bmatrix}$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name>Isaac Flath</name></author><summary type="html"></summary></entry><entry><title type="html">Gradient Descent for Linear Regression</title><link href="https://isaac-flath.github.io/blog/optimization/gradientdescent/2020/05/09/PredictiveAnalyticsInMarketing.html" rel="alternate" type="text/html" title="Gradient Descent for Linear Regression" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/optimization/gradientdescent/2020/05/09/PredictiveAnalyticsInMarketing</id><content type="html" xml:base="https://isaac-flath.github.io/blog/optimization/gradientdescent/2020/05/09/PredictiveAnalyticsInMarketing.html">&lt;!--
-#################################################
-### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
-#################################################
-# file to edit: _notebooks/PredictiveAnalyticsInMarketing.ipynb
---&gt;
-
-&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
-        
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;The goal of linear regression is to find parameter values that fit a linear function to data points.  The goodness of fit is measured by a cost function.  The lower the cost, the better the model.  Gradient Descent is a method to minimize a cost function.  Gradient descent is a widely used tool and is used frequently in tuning predictive models.  It’s important to understand the method so you can apply it to various models and are not limited to using black box models.&lt;/p&gt;
-&lt;p&gt;As I just mentioned, gradient descent is a method to reduce a cost function.  To understand how to minimize a cost function, you need to understand how cost is calculated.  For this post I will be using a very simple example; linear regression with one feature, two data points, and two regression coefficients.  I will use the sum of squares cost function to take the predicted line and slowly change the regression coefficients until the line passes through both points.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Isaac-Flath/blog/blob/master/_notebooks/my_icons/gradientdescent-graph.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;In this example we could easily draw a line through the points without using gradient descent, but if we had more data points this would get trickier.  In the table below we can see what the data looks like that we are working with.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Isaac-Flath/blog/blob/master/_notebooks/my_icons/gradientdescent-table.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;The tree below illustrates how to solve for cost as well as how to improve the values of 𝜃 to minimize cost.  In the illustration above, J = a1 + a2 is the cost function we want to minimize.  As we can see, if the regression coefficients (𝜃0+ 𝜃1) do not give a good fit, then the difference between our predicted values and observed values will be large and we will have a high cost (J).  For low values, we will have a low cost (J).  The figure below shows us how to calculate cost from the regression coefficients (𝜃0 and 𝜃1).&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Isaac-Flath/blog/blob/master/_notebooks/my_icons/gradient-descent-figure.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;The second thing this chart shows you is how to improve values of theta.  We used the formulas in the boxes to evaluate J, so now we will use the values on the edges to improve the parameter values.  Each regression coefficient has a path up to the cost function.  You get a path value for each 𝜃 on the tree by multiplying the edge values along that path.  For example:&lt;/p&gt;
-&lt;p&gt;$𝜃_1\; path\;value = x^1 (y^1_{pred} - y^1_{obs}) (1) + x^2 (y^2_{pred} - y^2_{obs}) (1)$&lt;/p&gt;
-&lt;p&gt;The last step is to improve the value of 𝜃.  In order to improve the value of 𝜃, we need to multiply the path value by 𝛼, and subtract that from that 𝜃.  𝛼 is a value that determines how large the increments will be taken during optimization.  If you pick an 𝛼 value that is is too large, you risk missing the local optima.  If you choose an 𝛼 value that is too small you will be very accurate, but it will be more computationally expensive.
-With more data points there would be more edges originating at J, and with more features there would be more thetas originating from the predicted values, but the same concept can be applied to these more complicated examples.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3174,110 +3174,6 @@ drop fare accuracy:
 &lt;/div&gt;
     
 
-&lt;/div&gt;</content><author><name>Isaac Flath</name></author><summary type="html"></summary></entry><entry><title type="html">Customer Analytics Part 1</title><link href="https://isaac-flath.github.io/blog/analytics/2020/05/09/Untitled1.html" rel="alternate" type="text/html" title="Customer Analytics Part 1" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/analytics/2020/05/09/Untitled1</id><content type="html" xml:base="https://isaac-flath.github.io/blog/analytics/2020/05/09/Untitled1.html">&lt;!--
-#################################################
-### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
-#################################################
-# file to edit: _notebooks/Untitled1.ipynb
---&gt;
-
-&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
-        
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Intro&quot;&gt;Intro&lt;a class=&quot;anchor-link&quot; href=&quot;#Intro&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Customer Analytics is a valuable tool, but often the basics are overlooked. It can have a huge impact, and it doesn't always mean complex modeling.  It always starts with the basics.  Because customer analytics can make such a big impact, I am going to break this into several posts.&lt;/p&gt;
-&lt;p&gt;In this post (Part 1) I am going to explain a basic descriptive customer analytics framework and how use it to identify the current state.  This understanding allows us to conduct A/B testing so we can measure how our actions impact revenue and by how much.  There are many ways to do this, this is just one of them.&lt;/p&gt;
-&lt;p&gt;In Part 2 I'll talk about how to build on the descriptive framework to create a predictive model.  A predictive model allows companies to plan proactively instead of reactively.&lt;/p&gt;
-&lt;h1 id=&quot;Background:&quot;&gt;Background:&lt;a class=&quot;anchor-link&quot; href=&quot;#Background:&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Many companies rely on experience and basic summarizing of historical statistics to make decisions.  While both of these are useful tools, a powerful way to successfully sustain long term revenue growth is to add customer analytics to their tool belt.  In this post I am discussing the starting point for analytics, descriptive analytics.&lt;/p&gt;
-&lt;p&gt;An easy and solid starting point for descriptive analytics is a RFM (Recency, Frequency, Monetary Value) model.  A primary advantage to this is the only data you need is purchase history for each customer, which is information that almost every company tracks.  I’ve outlined the three main steps to creating this framework and using it to increase revenue.&lt;/p&gt;
-&lt;h1 id=&quot;Determine-length-of-customer-buying-cycle:&quot;&gt;Determine length of customer buying cycle:&lt;a class=&quot;anchor-link&quot; href=&quot;#Determine-length-of-customer-buying-cycle:&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The first step is to determine what time range is a good time range to use for a buying cycle.  For a grocery store, maybe we say typically people go grocery shopping once a week.  In that scenario we would use 1 week as our time range for our cycle.  However a company that prints business cards may find a much longer time frame as customers tend to buy 1,000 and repurchase when they get low.  For this example we could use a 6 month cycle.  I encourage people to explore their data and pick a time range based on intuition.  There are better and more complicated ways to figure out this time range, but I encourage people to demonstrate results and revenue growth before circling back with more resources and support from executive management.&lt;/p&gt;
-&lt;h1 id=&quot;Calculate-descriptive-customer-metrics:&quot;&gt;Calculate descriptive customer metrics:&lt;a class=&quot;anchor-link&quot; href=&quot;#Calculate-descriptive-customer-metrics:&quot;&gt; &lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Let’s say we choose a 1 month cycle.  The next step is to create and fill in a table to get frequency and monetary Value.  In the table below I outline how we calculate both of those KPIs (Key Performance Indicators).&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;Stretch/Untouched&lt;/th&gt;
-&lt;th&gt;ProbDistribution&lt;/th&gt;
-&lt;th&gt;Accuracy&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Example&lt;/td&gt;
-&lt;td&gt;Rev $$&lt;/td&gt;
-&lt;td&gt;Rev $$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;January&lt;/th&gt;
-&lt;th&gt;February&lt;/th&gt;
-&lt;th&gt;March&lt;/th&gt;
-&lt;th&gt;Frequency&lt;/th&gt;
-&lt;th&gt;Monetary Value&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Example&lt;/td&gt;
-&lt;td&gt;Rev $$&lt;/td&gt;
-&lt;td&gt;Rev $$&lt;/td&gt;
-&lt;td&gt;Rev $$&lt;/td&gt;
-&lt;td&gt;# of slots purchased in&lt;/td&gt;
-&lt;td&gt;Average Monetary Value&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Customer A&lt;/td&gt;
-&lt;td&gt;$102&lt;/td&gt;
-&lt;td&gt;$60&lt;/td&gt;
-&lt;td&gt;$75&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;=($102+$60+$75) / 3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Customer B&lt;/td&gt;
-&lt;td&gt;$97&lt;/td&gt;
-&lt;td&gt;$85&lt;/td&gt;
-&lt;td&gt;$0&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;=($85+97) / 2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Customer C&lt;/td&gt;
-&lt;td&gt;$0&lt;/td&gt;
-&lt;td&gt;$9852&lt;/td&gt;
-&lt;td&gt;$0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;=($9,852) / 1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Once this is done add another column for Recency and fill that in with how long since that last purchase.  This can be days, hours, or seconds since last purchase depending on how far apart customer purchases typically are.  For this simplified version we will use days.  We end up with a table like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Recency Frequency   Monetary Value
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Customer A  3   3   $79
-Customer B  35  2   $91
-Customer C  48  1   $9852
-Conduct A/B testing:&lt;/p&gt;
-&lt;p&gt;Now that we have three metrics (RFM) that describe customer buying patterns, we can start using them to run experiments to drive revenue growth.  A/B testing is a simple experiment that you can run to compare two things. You split your customers into two group and make no change to what you are doing to group A, but do something different in group B.  By doing this we can compare the revenue of the two groups to see what impact our efforts had.  If B is better, we will apply that action to the entire customer base.  If not, we scrap the idea and move on.  This is a never-ending process of  testing new ideas.&lt;/p&gt;
-&lt;p&gt;Here’s a few ideas for A/B tests using RFM to get you started:&lt;/p&gt;
-&lt;p&gt;Call every customer in group B to see how that impacts revenue.  Does this increase Frequency (F) or average Monetary Value (M) of orders?  Is it worth the additional resources?
-Send a marketing email blast to everyone in group B.  How does this change group B’s buying patterns?
-What impact does sending a one-time-only 5% off coupon have?
-If we raise the price by 5% in group B, what is the effect on revenue?  This is especially useful because we can run limited experiments and gauge reaction of price hikes without angering every customer.
-If we raise the price on a product that is nearing the end of its product life cycle, do sales increase on the newly released product?  Does a price hike on old products encourage customers to buy newer versions?
-Send group A customers to the current website and group B customers to a new website layout.  Monitor sales, traffic, and clicks on each site.  This can help determine the better layout.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;</content><author><name>Isaac Flath</name></author><summary type="html"></summary></entry><entry><title type="html">Geometry of Linear Equations (18.06_L1)</title><link href="https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_1_GeometryOfLinearEquations.html" rel="alternate" type="text/html" title="Geometry of Linear Equations (18.06_L1)" /><published>2020-05-09T00:00:00-05:00</published><updated>2020-05-09T00:00:00-05:00</updated><id>https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_1_GeometryOfLinearEquations</id><content type="html" xml:base="https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_1_GeometryOfLinearEquations.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
