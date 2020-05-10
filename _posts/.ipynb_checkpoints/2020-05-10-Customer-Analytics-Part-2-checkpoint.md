@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Simple and minimalistic predictive customer analytics starting point
-categories: [CustomerAnalytics]
+categories: [Customer Analytics]
 title: Predictive Customer Analytics (Part 2)
 ---
 

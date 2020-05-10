@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Simple and minimalistic descriptive customer analytics starting point
-categories: [CustomerAnalytics]
+categories: [Customer Analytics]
 title: Descriptive Customer Analytics (Part 1)
 ---
 
