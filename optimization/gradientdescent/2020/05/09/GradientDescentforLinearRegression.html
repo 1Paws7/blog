@@ -222,7 +222,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The tree below illustrates how to solve for cost as well as how to improve the values of 𝜃 to minimize cost.  In the illustration above, J = a1 + a2 is the cost function we want to minimize.  As we can see, if the regression coefficients (𝜃0+ 𝜃1) do not give a good fit, then the difference between our predicted values and observed values will be large and we will have a high cost (J).  For low values, we will have a low cost (J).  The figure below shows us how to calculate cost from the regression coefficients (𝜃0 and 𝜃1).</p>
+<p>The tree below illustrates how to solve for cost as well as how to improve the values of $\theta$ to minimize cost.  In the illustration above, $J = a^1 + a^2$ is the cost function we want to minimize.  As we can see, if the regression coefficients ($\theta_0+\theta_1$) do not give a good fit, then the difference between our predicted values and observed values will be large and we will have a high cost ($J$).  For low values, we will have a low cost ($J$).  The figure below shows us how to calculate cost from the regression coefficients ($\theta_0$ and $\theta_1$).</p>
 
 </div>
 </div>
@@ -238,10 +238,10 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The second thing this chart shows you is how to improve values of theta.  We used the formulas in the boxes to evaluate J, so now we will use the values on the edges to improve the parameter values.  Each regression coefficient has a path up to the cost function.  You get a path value for each 𝜃 on the tree by multiplying the edge values along that path.  For example:</p>
-<p>$𝜃_1\; path\;value = x^1 (y^1_{pred} - y^1_{obs}) (1) + x^2 (y^2_{pred} - y^2_{obs}) (1)$</p>
-<p>The last step is to improve the value of 𝜃.  In order to improve the value of 𝜃, we need to multiply the path value by 𝛼, and subtract that from that 𝜃.  𝛼 is a value that determines how large the increments will be taken during optimization.  If you pick an 𝛼 value that is is too large, you risk missing the local optima.  If you choose an 𝛼 value that is too small you will be very accurate, but it will be more computationally expensive.
-With more data points there would be more edges originating at J, and with more features there would be more thetas originating from the predicted values, but the same concept can be applied to these more complicated examples.</p>
+<p>The second thing this chart shows you is how to improve values of theta.  We used the formulas in the boxes to evaluate $J$, so now we will use the values on the edges to improve the parameter values.  Each regression coefficient has a path up to the cost function.  You get a path value for each $\theta$ on the tree by multiplying the edge values along that path.  For example:</p>
+<p>$\theta_1\; path\;value = x^1 (y^1_{pred} - y^1_{obs}) (1) + x^2 (y^2_{pred} - y^2_{obs}) (1)$</p>
+<p>The last step is to improve the value of $\theta$.  In order to improve the value of $\theta$, we need to multiply the path value by $\alpha$, and subtract that from that $\theta$.  $\alpha$ is a value that determines how large the increments will be taken during optimization.  If you pick an $\alpha$ value that is is too large, you risk missing the local optima.  If you choose an $\alpha$ value that is too small you will be very accurate, but it will be more computationally expensive.
+With more data points there would be more edges originating at $J$, and with more features there would be more thetas originating from the predicted values, but the same concept can be applied to these more complicated examples.</p>
 
 </div>
 </div>
