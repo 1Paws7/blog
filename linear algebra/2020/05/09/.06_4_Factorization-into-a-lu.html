@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Factorization into $A=LU$ (18.06_L4) | Isaac’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Factorization into $A=LU$ (18.06_L4)" />
+<meta name="author" content="Isaac Flath" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linear Algebra - From $EA=U$ to $A=LU$" />
+<meta property="og:description" content="Linear Algebra - From $EA=U$ to $A=LU$" />
+<link rel="canonical" href="https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html" />
+<meta property="og:url" content="https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html" />
+<meta property="og:site_name" content="Isaac’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-09T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Linear Algebra - From $EA=U$ to $A=LU$","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html"},"@type":"BlogPosting","url":"https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html","headline":"Factorization into $A=LU$ (18.06_L4)","dateModified":"2020-05-09T00:00:00-05:00","datePublished":"2020-05-09T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Factorization into $A=LU$ (18.06_L4) | Isaac’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Factorization into $A=LU$ (18.06_L4)" />
+<meta name="author" content="Isaac Flath" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linear Algebra - From $EA=U$ to $A=LU$" />
+<meta property="og:description" content="Linear Algebra - From $EA=U$ to $A=LU$" />
+<link rel="canonical" href="https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html" />
+<meta property="og:url" content="https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html" />
+<meta property="og:site_name" content="Isaac’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-09T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Linear Algebra - From $EA=U$ to $A=LU$","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html"},"@type":"BlogPosting","url":"https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html","headline":"Factorization into $A=LU$ (18.06_L4)","dateModified":"2020-05-09T00:00:00-05:00","datePublished":"2020-05-09T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script type="text/javascript">
+require.config({
+  paths: {
+    jquery: 'https://code.jquery.com/jquery-3.5.0.min',
+    plotly: 'https://cdn.plot.ly/plotly-latest.min'
+  },
+
+  shim: {
+    plotly: {
+      deps: ['jquery'],
+      exports: 'plotly'
+    }
+  }
+});
+</script>
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Isaac&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Factorization into $A=LU$ (18.06_L4)</h1><p class="page-description">Linear Algebra - From $EA=U$ to $A=LU$</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-09T00:00:00-05:00" itemprop="datePublished">
+        May 9, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Isaac Flath</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Linear Algebra">Linear Algebra</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/Isaac-Flath/blog/tree/master/_notebooks/18.06_4_Factorization into a-lu.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/Isaac-Flath/blog/master?filepath=_notebooks%2F18.06_4_Factorization+into+a-lu.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/Isaac-Flath/blog/blob/master/_notebooks/18.06_4_Factorization into a-lu.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Inverse-of-$AB$,-$A^T$">Inverse of $AB$, $A^T$ </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Review">Review </a></li>
+<li class="toc-entry toc-h2"><a href="#AB-Inverse">AB Inverse </a></li>
+<li class="toc-entry toc-h2"><a href="#$A^T$">$A^T$ </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Converting-to-$A-=-LU$">Converting to $A = LU$ </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#2x2-to-$A=LU$">2x2 to $A=LU$ </a></li>
+<li class="toc-entry toc-h2"><a href="#3x3-to-$A-=-LU$">3x3 to $A = LU$ </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#$A=LU$-vs-$EA=U$">$A=LU$ vs $EA=U$ </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/18.06_4_Factorization into a-lu.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Inverse-of-$AB$,-$A^T$">
+<a class="anchor" href="#Inverse-of-%24AB%24,-%24A%5ET%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inverse of $AB$, $A^T$<a class="anchor-link" href="#Inverse-of-%24AB%24,-%24A%5ET%24"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Review">
+<a class="anchor" href="#Review" aria-hidden="true"><span class="octicon octicon-link"></span></a>Review<a class="anchor-link" href="#Review"> </a>
+</h2>
+<p>So we know from previous lectures/blog posts that $A$ time the inverse of $A$ gives the Identify Matrix $I$.  The Identify matrix is matrix equivilent to multiplying by 1, no change to the matrix.</p>
+<p>$AA^{-1}=I=A^{-1}A$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="AB-Inverse">
+<a class="anchor" href="#AB-Inverse" aria-hidden="true"><span class="octicon octicon-link"></span></a>AB Inverse<a class="anchor-link" href="#AB-Inverse"> </a>
+</h2>
+<p>So if the Inverse of a Matrix time it's inverse gives the identity, how do we find the inverse of a product of matrices?  It turns out you just multiply the inverses of those matrices in reverse.</p>
+<p>Why in reverse?  If you put socks and shoes on, you wouldn't invert that process by taking socks off first.  You would invert it by doing the steps in reverse.  Shoes off first.</p>
+<p>A more technical understanding of this can be seen below:</p>
+<p>$ABB^{-1}A^{-1}= I$</p>
+<p>Let's multiply the middle piece first.  $BB^{-1}$  We know that equals the Identify matrix, and a matrix time the identity just gives that matrix.  So then what you are left wtih is $AA^{-1}=I$, which we also know is true.</p>
+<p>This work the other way as well:</p>
+<p>$B^{-1}(A^{-1}A)B = I$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="$A^T$">
+<a class="anchor" href="#%24A%5ET%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>$A^T$<a class="anchor-link" href="#%24A%5ET%24"> </a>
+</h2>
+<p>Transposes work in a similar way.  We can tak transposes in reverse to get the Identity Matrix.</p>
+<p>$AA^{-1}=I$</p>
+<p>$(A^{-1})^TA^T=I$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Converting-to-$A-=-LU$">
+<a class="anchor" href="#Converting-to-%24A-=-LU%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>Converting to $A = LU$<a class="anchor-link" href="#Converting-to-%24A-=-LU%24"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2x2-to-$A=LU$">
+<a class="anchor" href="#2x2-to-%24A=LU%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>2x2 to $A=LU$<a class="anchor-link" href="#2x2-to-%24A=LU%24"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Previously we learned that using Elimination we create these Elimination Matrices.  In this example of a 2x2 matrix:</p>
+<p>$E_{21}A = U =&gt; $
+$\left[
+\begin{array}{cc}
+1 &amp; 0 \\
+-4 &amp; 1 \\
+\end{array}
+\right]$
+$\left[
+\begin{array}{cc}
+2 &amp; 1 \\
+8 &amp; 7 \\
+\end{array}
+\right]$
+$=$
+$\left[
+\begin{array}{cc}
+2 &amp; 1 \\
+0 &amp; 3 \\
+\end{array}
+\right]$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now how do we get $A=LU$ from this.  We can see matrix $A$ and matrix $U$ are already in the right place, so lets leave those alone.  We can see that we need to turn Matrix $E_{21}$ into Matrix $L$ by switching it's sides.  The way we move a matrix from one side to the other is through the inverse of the matrix.</p>
+<p>$A=LU=&gt;$
+$\left[
+\begin{array}{cc}
+2 &amp; 1 \\
+8 &amp; 7 \\
+\end{array}
+\right]$
+$=$
+$\left[
+\begin{array}{cc}
+1 &amp; 0 \\
+4 &amp; 1 \\
+\end{array}
+\right]$
+$\left[
+\begin{array}{cc}
+2 &amp; 1 \\
+0 &amp; 3 \\
+\end{array}
+\right]$
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
+    <strong>Note: </strong>$E_{21}A = U$ is just a different format of  $A=LU$.  In $A=LU$ you can see $L$ is just $E_{21}^{-1}$
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3x3-to-$A-=-LU$">
+<a class="anchor" href="#3x3-to-%24A-=-LU%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>3x3 to $A = LU$<a class="anchor-link" href="#3x3-to-%24A-=-LU%24"> </a>
+</h2>
+<p>As we saw in an earlier blog, when we do elimination of a 3x3 matrix we would get more Elmination matrices.  We are still working examples with no row exchanges.</p>
+<p>
+$$E_{32}E_{31}E_{21}A=U$$
+</p>
+<p>So how do we convert this into $A = LU$?  As we learned above, we can invert the product of matrices as well.  Let's apply that here with these matrices.</p>
+<p>
+$$A=E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}U$$
+</p>
+<p>Well that doesn't look as nice to work with as $A = LU$.  So let's just simplify it by multiplying all the Elimination inverse matrices together.  Meaning L would be a product of these 3 inverse matrices.</p>
+<p>
+$$A=E^{-1}U=LU$$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="$A=LU$-vs-$EA=U$">
+<a class="anchor" href="#%24A=LU%24-vs-%24EA=U%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>$A=LU$ vs $EA=U$<a class="anchor-link" href="#%24A=LU%24-vs-%24EA=U%24"> </a>
+</h1>
+<p>What's the point of taking the inverse.  It's the same formula mathamatrically, so why bother with this transformation.  Why $E^{-1}$ on the right and not just stay with $E$ on the left?  Let's do an example.</p>
+<p>$E_{32}E_{21}=E =&gt;$
+$\left[
+\begin{array}{ccc}
+1 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; -5 &amp; 1
+\end{array}
+\right]$
+$\left[
+\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+-2 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}
+\right]$
+$=$
+$\left[
+\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+-2 &amp; 1 &amp; 0 \\
+10 &amp; -5 &amp; 1
+\end{array}
+\right]$</p>
+<p>$E_{21}^{-1}E_{32}^{-1}=E^{-1} =&gt;$
+$\left[
+\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+2 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}
+\right]$
+$\left[
+\begin{array}{ccc}
+1 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 5 &amp; 1
+\end{array}
+\right]$
+$=$
+$\left[
+\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+2 &amp; 1 &amp; 0 \\
+0 &amp; 5 &amp; 1
+\end{array}
+\right]$
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
+    <strong>Note: </strong>2 and 5 were the multipliers that we used in our elinimation steps.
+</div>
+We can see that with $E^{-1}$ has 2 and 5 in the matrix. So if there are no row exchanges L is just a record of what the multipliers were, which is very convenient.  Worded another way, with no row exchanges the multipliers go directly into L.
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Isaac-Flath/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/linear%20algebra/2020/05/09/.06_4_Factorization-into-a-lu.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A place for Isaac to write blog posts on things that interest him or those that he talks to.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Isaac-Flath" title="Isaac-Flath"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/IsaacFlath" title="IsaacFlath"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
