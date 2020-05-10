@@ -296,7 +296,7 @@ window.onload = wrap_img;
 <h2 id="$E_{32}$">
 <a class="anchor" href="#%24E_%7B32%7D%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>$E_{32}$<a class="anchor-link" href="#%24E_%7B32%7D%24"> </a>
 </h2>
-<p>We now move on to row 3, column 2.  If we can get this to 0, then we have 1 uknown in that column.  That's what we want as that's easily solvable.</p>
+<p>We now move on to row 3, column 2.  If we can get this to 0, then we have 1 unknown in that column.  That's what we want as that's easily solvable.</p>
 <p>$\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;-2&amp;1\end{bmatrix}
 \begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}
 =\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}$</p>
@@ -310,7 +310,7 @@ window.onload = wrap_img;
 <h2 id="How-can-this-fail?">
 <a class="anchor" href="#How-can-this-fail?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can this fail?<a class="anchor-link" href="#How-can-this-fail?"> </a>
 </h2>
-<p>A 0 cannot me in one of the pivot spots.  The pivot positions are the diagonals.  If that happens, elimination will fail.  If you think about it, a  0 being in the pivot spot means that the left side of the equation is 0.  Either the right side is also 0 and it gives you no information, or the right side is not 0 and there is no solution (ie 2 = 0 is False).</p>
+<p>A 0 cannot be in one of the pivot spots.  The pivot positions are the diagonals.  If that happens, elimination will fail.  If you think about it, a  0 being in the pivot spot means that the left side of the equation is 0.  Either the right side is also 0 and it gives you no information, or the right side is not 0 and there is no solution (ie 2 = 0 is False).</p>
 <p>Of course, there are some tricks that can be added to minimize failures.  The most common of these are row exchanges.  By swapping the order of the rows, you can potentially solve an equation that would have failed in the original order.</p>
 <p>For example, if I were to exchange the 2nd and 3rd rows I would multiply by the following matrix.</p>
 <p>$\begin{bmatrix}1&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;0\end{bmatrix}$</p>
