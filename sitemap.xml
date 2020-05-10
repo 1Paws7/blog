@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_1_GeometryOfLinearEquations.html</loc>
+<loc>https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_1_GeometryOfLinearEquations.html</loc>
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/blog/linearalgebra/math/2020/05/09/.06_2_EliminationWithMatrices.html</loc>
+<loc>https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_2_EliminationWithMatrices.html</loc>
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/blog/2020/05/09/.06_3_MultiplicationandInverseMatrices.html</loc>
+<loc>https://isaac-flath.github.io/blog/linear%20algebra/2020/05/09/.06_3_MultiplicationandInverseMatrices.html</loc>
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/blog/customeranalytics/2020/05/09/Customer-Analytics-Part-1.html</loc>
+<loc>https://isaac-flath.github.io/blog/customer%20analytics/2020/05/09/Customer-Analytics-Part-1.html</loc>
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/blog/optimization/gradient%20descent/2020/05/09/GradientDescentforLinearRegression.html</loc>
+<loc>https://isaac-flath.github.io/blog/gradient%20descent/2020/05/09/GradientDescentforLinearRegression.html</loc>
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
@@ -25,11 +25,11 @@
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/blog/randomforest/classification/2020/05/09/RandomForestClassifier.html</loc>
+<loc>https://isaac-flath.github.io/blog/tree%20ensembles/2020/05/09/RandomForestClassifier.html</loc>
 <lastmod>2020-05-09T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://isaac-flath.github.io/blog/customeranalytics/2020/05/10/Customer-Analytics-Part-2.html</loc>
+<loc>https://isaac-flath.github.io/blog/customer%20analytics/2020/05/10/Customer-Analytics-Part-2.html</loc>
 <lastmod>2020-05-10T00:00:00-05:00</lastmod>
 </url>
 <url>
