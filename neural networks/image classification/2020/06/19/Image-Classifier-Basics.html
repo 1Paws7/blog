@@ -128,7 +128,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      14 min read
     
 </span></p>
 
@@ -3254,121 +3254,38 @@ $\begin{bmatrix}0&amp;1\\0&amp;0\\0&amp;0\\0&amp;1\\1&amp;0\\1&amp;0\\0&amp;0\\0
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>1st Linear Layer = $\underbrace{
-\begin{bmatrix}
-&amp;&amp;&amp;&amp;&amp;\\
-&amp;&amp;&amp;&amp;&amp;\\
-&amp;&amp;&amp;&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 784 Inputs (pixels)}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;&amp;&amp;&amp;\\
-&amp;&amp;&amp;&amp;&amp;\\
-&amp;&amp;&amp;&amp;&amp;\\
-\end{bmatrix}}\right\}709 Images\;\;\;\;\;\;\;\; $
-$\underbrace{
-\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 30 Weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}\right\}784 Inputs\;\;\;\;\;\;\;\;$
-$\mathbf{+}\;\;\;\;\;\;\;\;$
-$\underbrace{
-\begin{bmatrix}
-&amp;&amp;&amp;&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 30 Weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;&amp;&amp;&amp;\\
-\end{bmatrix}}\right\}1 bias\;\;\;\;\;\;\;\;$
-$\mathbf{=}\;\;\;\;\;\;\;\;$
-$\underbrace{
-\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 30 weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}\right\}709 images$</p>
-<p>1st Relu Layer = 
-$\underbrace{
-\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 30 weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}\right\}709 images\;\;\;\;\;\;\;\;$
-$\mathbf{=}\;\;\;\;\;\;\;\;$
-$\underbrace{
-\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 30 weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}\right\}709 images$</p>
-<p>2nd/Final Linear Layer = $\underbrace{
-\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 30 Inputs (Weights)}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}\right\}709 images\;\;\;\;\;\;\;\;$
-$\underbrace{
-\begin{bmatrix}
-&amp;\\
-&amp;\\
-&amp;\\
-\end{bmatrix}}_{\displaystyle 1 Weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;\\
-&amp;\\
-&amp;\\
-\end{bmatrix}}\right\}30 Inputs\;\;\;\;\;\;\;\;$
-$\mathbf{+}\;\;\;\;\;\;\;\;$
-$\underbrace{
-\begin{bmatrix}
-&amp;\\
-\end{bmatrix}}_{\displaystyle 1 Weights}
-\left.\vphantom{\begin{bmatrix}
-&amp;\\
-\end{bmatrix}}\right\}1 bias\;\;\;\;\;\;\;\;$
-$\mathbf{=}\;\;\;\;\;\;\;\;$
-$\underbrace{
-\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}_{\displaystyle 1 prediction}
-\left.\vphantom{\begin{bmatrix}
-&amp;&amp;\\
-&amp;&amp;\\
-&amp;&amp;\\
-\end{bmatrix}}\right\}709 images$</p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">![](</span>my_icons/simple_net.png<span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/bin/sh: -c: line 0: syntax error near unexpected token `my_icons/simple_net.png'
+/bin/sh: -c: line 0: `[](my_icons/simple_net.png)'
+</pre>
+</div>
+</div>
 
 </div>
 </div>
+
 </div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
