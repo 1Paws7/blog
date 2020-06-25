@@ -3,18 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Page 2 of 2 for Isaac’s Blog | A place for Isaac to write blog posts on things that interest him or those that he talks to.</title>
+<title>Image Classification Loss Functions | Isaac’s Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Isaac’s Blog" />
+<meta property="og:title" content="Image Classification Loss Functions" />
+<meta name="author" content="Isaac Flath" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A place for Isaac to write blog posts on things that interest him or those that he talks to." />
-<meta property="og:description" content="A place for Isaac to write blog posts on things that interest him or those that he talks to." />
-<link rel="canonical" href="https://isaac-flath.github.io/blog/page2/" />
-<meta property="og:url" content="https://isaac-flath.github.io/blog/page2/" />
+<meta name="description" content="Common Loss Functions for Image Classification Explained!" />
+<meta property="og:description" content="Common Loss Functions for Image Classification Explained!" />
+<link rel="canonical" href="https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html" />
+<meta property="og:url" content="https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html" />
 <meta property="og:site_name" content="Isaac’s Blog" />
-<link rel="prev" href="https://isaac-flath.github.io/blog/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-24T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"A place for Isaac to write blog posts on things that interest him or those that he talks to.","@type":"WebPage","url":"https://isaac-flath.github.io/blog/page2/","headline":"Isaac’s Blog","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Common Loss Functions for Image Classification Explained!","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html"},"@type":"BlogPosting","url":"https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html","headline":"Image Classification Loss Functions","dateModified":"2020-06-24T00:00:00-05:00","datePublished":"2020-06-24T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -23,18 +25,20 @@
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-170233952-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Page 2 of 2 for Isaac’s Blog | A place for Isaac to write blog posts on things that interest him or those that he talks to.</title>
+<title>Image Classification Loss Functions | Isaac’s Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Isaac’s Blog" />
+<meta property="og:title" content="Image Classification Loss Functions" />
+<meta name="author" content="Isaac Flath" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A place for Isaac to write blog posts on things that interest him or those that he talks to." />
-<meta property="og:description" content="A place for Isaac to write blog posts on things that interest him or those that he talks to." />
-<link rel="canonical" href="https://isaac-flath.github.io/blog/page2/" />
-<meta property="og:url" content="https://isaac-flath.github.io/blog/page2/" />
+<meta name="description" content="Common Loss Functions for Image Classification Explained!" />
+<meta property="og:description" content="Common Loss Functions for Image Classification Explained!" />
+<link rel="canonical" href="https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html" />
+<meta property="og:url" content="https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html" />
 <meta property="og:site_name" content="Isaac’s Blog" />
-<link rel="prev" href="https://isaac-flath.github.io/blog/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-24T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"A place for Isaac to write blog posts on things that interest him or those that he talks to.","@type":"WebPage","url":"https://isaac-flath.github.io/blog/page2/","headline":"Isaac’s Blog","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Common Loss Functions for Image Classification Explained!","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html"},"@type":"BlogPosting","url":"https://isaac-flath.github.io/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html","headline":"Image Classification Loss Functions","dateModified":"2020-06-24T00:00:00-05:00","datePublished":"2020-06-24T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -125,62 +129,89 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><p>Just a casual blogging site.  This blog just as much (or more so) about my own development than about me sharing information with the world.</p>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<p>The process of writing with the intent to explain or teach helps me organize my thoughts and understand a topic better.</p>
-
-<p>If you have any topic requests or questions feel free to reach out or comment.</p>
-
-<h1 id="posts">Posts</h1>
-
-
-
-  
-
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><h3>
-    <a class="post-link" href="/blog/linear%20algebra/2020/05/10/18.06_2_EliminationWithMatrices.html">
-    Elimination with Matrices (18.06_L2)
-    </a>
-</h3><p class="post-meta-description">Linear Algebra - An introduction to Elimination (solving systems of equations)</p><p class="post-meta">May 10, 2020</p>
-</li><li><h3>
-    <a class="post-link" href="/blog/linear%20algebra/2020/05/09/18.06_1_GeometryOfLinearEquations.html">
-    Geometry of Linear Equations (18.06_L1)
-    </a>
-</h3><p class="post-meta-description">Linear Algebra - An introduction to Systems of Linear Equations</p><p class="post-meta">May 9, 2020</p>
-</li><li><h3>
-    <a class="post-link" href="/blog/gradient%20descent/2020/05/09/GradientDescentforLinearRegression-P1.html">
-    Gradient Descent for Linear Regression
-    </a>
-</h3><p class="post-meta-description">Under the hood of gradient descent for model optimization</p><p class="post-meta">May 9, 2020</p>
-</li><li><h3>
-    <a class="post-link" href="/blog/jupyter/2020/05/07/JupyterNotebooks.html">
-    Jupyter Notebook Tutorial
-    </a>
-</h3><p class="post-meta-description">A tutorial of core functionality of Jupyter Notebooks to have an enjoyable coding experience.</p><p class="post-meta">May 7, 2020</p>
-</li></ul>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Image Classification Loss Functions</h1><p class="page-description">Common Loss Functions for Image Classification Explained!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-24T00:00:00-05:00" itemprop="datePublished">
+        Jun 24, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Isaac Flath</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
     
-      <div class="pager">
-        <ul class="pagination">
-          <li><a href="/blog/" class="previous-page">1</a></li>
-          <li><div class="current-page">2</div></li>
-          <li><div class="pager-edge">•</div></li>
-        </ul>
-      </div></div>
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Neural Networks">Neural Networks</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Image Classification">Image Classification</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/Isaac-Flath/blog/tree/master/_notebooks/Untitled.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/Isaac-Flath/blog/master?filepath=_notebooks%2FUntitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/Isaac-Flath/blog/blob/master/_notebooks/Untitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Untitled.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Isaac-Flath/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/neural%20networks/image%20classification/2020/06/24/Untitled.html" hidden></a>
+</article>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/blog/"></data>
