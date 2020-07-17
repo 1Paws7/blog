@@ -268,7 +268,7 @@ window.onload = wrap_img;
         us-east-2 = "ami-31432143214213435"
     }
 }</code></pre>
-<p>Then in terrarorm console get that value using</p>
+<p>Then in terrarorm console get that value using:</p>
 <p><code>var.AMIS.us-east-1</code></p>
 <p>So this is how we can get and store different configuration options.  But Terraform is not just variables.  You also have ways of running your code to deploy things.  For example <code>terraform plan</code> shows you what it would do if you deployed.  <code>terraform apply</code> deploys your options and <code>terraform destroy</code> destroys all your infrastructure defined.</p>
 <p>But what is it applying?  So far all we have done is define a variable.  Let's define an EC2 instance.</p>
@@ -380,7 +380,7 @@ instance_type = "t2.micro"
 <h1 id="Apply-the-Changes">
 <a class="anchor" href="#Apply-the-Changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Apply the Changes<a class="anchor-link" href="#Apply-the-Changes"> </a>
 </h1>
-<p>Now all you need to do is run <code>terraform apply</code> and your t2.micro ec2 instance will automatically be created!</p>
+<p>Now all you need to do is run <code>terraform apply</code> in your terminal and your t2.micro ec2 instance will automatically be created!  If it is a new folder for terraform, you will need to run <code>terraform init</code> in the folder before it will work.</p>
 
 </div>
 </div>
