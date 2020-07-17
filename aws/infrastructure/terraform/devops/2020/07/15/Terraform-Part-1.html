@@ -238,7 +238,7 @@ window.onload = wrap_img;
 <h1 id="Setup">
 <a class="anchor" href="#Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup<a class="anchor-link" href="#Setup"> </a>
 </h1>
-<p>You will need to install Terraform - I am not going to cover installation in this post.  If you need help installing terraform, I would reccomend checking out a more complete course, such as udemy.com/course/learn-devops-infrastructure-automation-with-terraform</p>
+<p>You will need to install Terraform in your terminal.  I am not going to cover installation in this post, but you can check out terraform.io and install if from there.</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Many people think Terraform is a bunch of config files, but rather than thinking of it as config files it is more helpful to think of it as a programming language.  You can define lists, maps (similar to python dictionaries), strings, and perform actions using values in those variables.</p>
+<p>Many people think Terraform is just a bunch of config files, but rather than thinking of it as config files it is more helpful to think of it as a programming language.  You can define lists, maps (similar to python dictionaries), strings, and perform actions using values in those variables.</p>
 <h3 id="Variables">
 <a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
 </h3>
@@ -279,7 +279,7 @@ window.onload = wrap_img;
 ami = "${lookup(var.AMIS, var.AWS_REGION)}"
 instance_type = "t2.micro"
 }</code></pre>
-<p>From the above we can see we have everything we need to launch an EC2 instance.  We define an AMI by looking up the AWS_Region variable from the AMIS variable we defined above.</p>
+<p>From the above we can see we have most of what we need to launch an EC2 instance.  We define an AMI by looking up the AWS_Region variable from the AMIS variable we defined above.</p>
 
 </div>
 </div>
