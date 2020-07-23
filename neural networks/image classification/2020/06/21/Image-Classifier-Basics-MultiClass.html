@@ -318,7 +318,7 @@ window.onload = wrap_img;
 
 
 <div class="output_png output_subarea output_execute_result">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAwUlEQVR4nGNgoAaY8F0eVYAJiW3LzoNTkoXz9w+cpur/e4QmgqRTn+EObkkG/JLHcUsaMHzCLSnOcAO3pPyPewy4gML3p2wMDEwsSMoRTHH2fwwMHmd/XdDAotPk31UW5i//fv97LIBF9u0/yc7vvTpL/i3CIrn/X+zjyQwMav/eYJGc+m/HP3UGBubz2CQdf/17zczAwHAImyTDpP//cvQYxC5ilRQ98e/f3x+//nVik2RgTT7w79/vIn6skoMeAACyy0D0k05xwAAAAABJRU5ErkJggg==%0A">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA1klEQVR4nGNgoB4wPn7SHJdc2Mu/kbjk9F7+W4tLjvvGv3PiuCS7/12UwCUn8+1fEC45njv/7jDjknT4988Bl5zQ0X/7+HFJevz7Z4FLjvXJv6scDAzOstgkS/99lGRgKP95E4t253v/tsknb/v57989OXQ5yav//s17/+9scNbBf0fQJav+/fv371+zAAOD279nYmiSs/7/+/clkolZfcLHf7uhYixw2f8MDLd493Ga/ru6rh3d2Fn/IOBVKBaPqN/79+/P3WUVIth8ySC35JUXVomhAgBLyVozIOqObgAAAABJRU5ErkJggg==%0A">
 </div>
 
 </div>
@@ -467,7 +467,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fbf7ea98290&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6b6ba44250&gt;</pre>
 </div>
 
 </div>
@@ -814,8 +814,8 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(tensor(0.5644, grad_fn=&lt;MeanBackward0&gt;),
- tensor(0.5678, grad_fn=&lt;MeanBackward0&gt;))</pre>
+<pre>(tensor(0.4779, grad_fn=&lt;MeanBackward0&gt;),
+ tensor(0.4793, grad_fn=&lt;MeanBackward0&gt;))</pre>
 </div>
 
 </div>
@@ -961,7 +961,7 @@ window.onload = wrap_img;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">batch_accuracy</span><span class="p">(</span><span class="n">xb</span><span class="p">,</span> <span class="n">yb</span><span class="p">):</span>    
     <span class="c1"># this is checking for each row, which column has the highest score.</span>
     <span class="c1"># p_inds, y_inds gives the index highest score, which is our prediction.</span>
-    <span class="n">p_out</span><span class="p">,</span> <span class="n">p_inds</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">p_out</span><span class="p">,</span> <span class="n">p_inds</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">xb</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">y_out</span><span class="p">,</span> <span class="n">y_inds</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">yb</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     
     <span class="c1"># Compre predictions with actual</span>
@@ -1079,17 +1079,14 @@ window.onload = wrap_img;
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">loss_old</span> <span class="o">=</span> <span class="mi">9999999</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
     <span class="n">train_epoch</span><span class="p">(</span><span class="n">simple_net</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
     
     <span class="c1"># Print Accuracy metric every 10 iterations</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">iterations</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">epochs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">'Accuracy:'</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">validate_epoch</span><span class="p">(</span><span class="n">simple_net</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s1">'%'</span><span class="p">)</span>
         
     <span class="n">loss_new</span> <span class="o">=</span> <span class="n">mnist_loss</span><span class="p">(</span><span class="n">simple_net</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">y</span><span class="p">)</span>
-    
-    <span class="c1"># Print Loss score every iteration</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Loss:  '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mnist_loss</span><span class="p">(</span><span class="n">simple_net</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span><span class="mi">5</span><span class="p">)),</span><span class="s2">"Loss decreased"</span> <span class="k">if</span> <span class="n">loss_new</span> <span class="o">&lt;</span> <span class="n">loss_old</span> <span class="k">else</span> <span class="s2">"Loss increased"</span><span class="p">)</span>
     
     <span class="n">loss_old</span> <span class="o">=</span> <span class="n">loss_new</span>
 </pre></div>
@@ -1104,40 +1101,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy:10.7%
-Loss:  0.10003 Loss decreased
-Loss:  0.10002 Loss decreased
-Loss:  0.09893 Loss decreased
-Loss:  0.09408 Loss decreased
-Loss:  0.09275 Loss decreased
-Loss:  0.09227 Loss decreased
-Loss:  0.0924 Loss increased
-Loss:  0.09199 Loss decreased
-Loss:  0.09156 Loss decreased
-Loss:  0.09231 Loss increased
-Accuracy:19.6%
-Loss:  0.09141 Loss decreased
-Loss:  0.09151 Loss increased
-Loss:  0.09128 Loss decreased
-Loss:  0.09118 Loss decreased
-Loss:  0.09135 Loss increased
-Loss:  0.09108 Loss decreased
-Loss:  0.09042 Loss decreased
-Loss:  0.08482 Loss decreased
-Loss:  0.08329 Loss decreased
-Loss:  0.08295 Loss decreased
-Accuracy:28.32%
-Loss:  0.08366 Loss increased
-Loss:  0.08272 Loss decreased
-Loss:  0.08259 Loss decreased
-Loss:  0.08258 Loss decreased
-Loss:  0.08245 Loss decreased
-Loss:  0.08249 Loss increased
-Loss:  0.08239 Loss decreased
-Loss:  0.08215 Loss decreased
-Loss:  0.07953 Loss decreased
-Accuracy:36.19%
-Loss:  0.07496 Loss decreased
+<pre>Accuracy:22.67%
+Accuracy:32.56%
+Accuracy:33.12%
+Accuracy:34.25%
 </pre>
 </div>
 </div>
