@@ -8,15 +8,15 @@
 <meta property="og:title" content="NLP - Tokenization Basics" />
 <meta name="author" content="Isaac Flath" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is Tokenization?" />
-<meta property="og:description" content="What is Tokenization?" />
+<meta name="description" content="What is Tokenization? What is numericalization?" />
+<meta property="og:description" content="What is Tokenization? What is numericalization?" />
 <link rel="canonical" href="https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html" />
 <meta property="og:url" content="https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html" />
 <meta property="og:site_name" content="Isaac’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-19T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Isaac Flath"},"description":"What is Tokenization?","@type":"BlogPosting","headline":"NLP - Tokenization Basics","url":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html","datePublished":"2020-08-19T00:00:00-05:00","dateModified":"2020-08-19T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"What is Tokenization? What is numericalization?","@type":"BlogPosting","headline":"NLP - Tokenization Basics","url":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html","datePublished":"2020-08-19T00:00:00-05:00","dateModified":"2020-08-19T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -30,15 +30,15 @@
 <meta property="og:title" content="NLP - Tokenization Basics" />
 <meta name="author" content="Isaac Flath" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is Tokenization?" />
-<meta property="og:description" content="What is Tokenization?" />
+<meta name="description" content="What is Tokenization? What is numericalization?" />
+<meta property="og:description" content="What is Tokenization? What is numericalization?" />
 <link rel="canonical" href="https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html" />
 <meta property="og:url" content="https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html" />
 <meta property="og:site_name" content="Isaac’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-19T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Isaac Flath"},"description":"What is Tokenization?","@type":"BlogPosting","headline":"NLP - Tokenization Basics","url":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html","datePublished":"2020-08-19T00:00:00-05:00","dateModified":"2020-08-19T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"What is Tokenization? What is numericalization?","@type":"BlogPosting","headline":"NLP - Tokenization Basics","url":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html","datePublished":"2020-08-19T00:00:00-05:00","dateModified":"2020-08-19T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/neural%20networks/2020/08/19/Tokenization.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -132,7 +132,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">NLP - Tokenization Basics</h1><p class="page-description">What is Tokenization?</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-19T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">NLP - Tokenization Basics</h1><p class="page-description">What is Tokenization?  What is numericalization?</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-19T00:00:00-05:00" itemprop="datePublished">
         Aug 19, 2020
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -180,6 +180,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Intro">Intro </a></li>
+<li class="toc-entry toc-h1"><a href="#Credit-Where-Credit-is-Due">Credit Where Credit is Due </a></li>
 <li class="toc-entry toc-h1"><a href="#The-Data">The Data </a></li>
 <li class="toc-entry toc-h1"><a href="#Tokenization">Tokenization </a>
 <ul>
@@ -209,9 +210,21 @@ window.onload = wrap_img;
 <h1 id="Intro">
 <a class="anchor" href="#Intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro<a class="anchor-link" href="#Intro"> </a>
 </h1>
-<p>In this post we are going to dive into NLP, specifically a Language Model.  Language models are the foundation of all NLP.  You will always want to start with a language model then use transfer learning to tune that model to your particular goal (ie Classification).</p>
+<p>In this post we are going to dive into NLP, specifically Tokenization.  Tokenization are the foundation of all NLP.</p>
 <p>So what is a language model?  In short, it is a model that uses the preceding words to predict the next word.  We do not need seperate labels, because they are in the text.  This is training the model on the nuances of the language you will be working on.  If you want to know if a tweet is toxic or not, you will need to be able to read and understand the tweet in order to do that.  The language model helps with understanding the tweet - then you can use that model with those weights to tune it for the final task (determining whether the tweet is toxic or not).</p>
-<p>For this post, I will be using news articles to show how to create a language model from scratch.</p>
+<p>For this post, I will be using news articles to show how to tokenize a news article and numericalize it to get ready for deep learning.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Credit-Where-Credit-is-Due">
+<a class="anchor" href="#Credit-Where-Credit-is-Due" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credit Where Credit is Due<a class="anchor-link" href="#Credit-Where-Credit-is-Due"> </a>
+</h1>
+<p>The concept and techniques covered in this post are covered in much greater detail in Jeremy Howard and Sylvain Gugger's book.  If you like this post, you should buy the book as you'll probably like it even more!</p>
+<p><a href="https://www.amazon.com/gp/product/1492045527/ref=ppx_yo_dt_b_asin_image_o08_s00?ie=UTF8&amp;psc=1%7C">https://www.amazon.com/gp/product/1492045527/ref=ppx_yo_dt_b_asin_image_o08_s00?ie=UTF8&amp;psc=1|</a></p>
 
 </div>
 </div>
