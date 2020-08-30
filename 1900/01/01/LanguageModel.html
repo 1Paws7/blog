@@ -140,7 +140,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -173,7 +173,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Intro">Intro </a></li>
-<li class="toc-entry toc-h1"><a href="#The-Data">The Data </a></li>
+<li class="toc-entry toc-h1"><a href="#The-Data">The Data </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Fastai-Language-Model">Fastai Language Model </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Tokenization-and-Numericalization">Tokenization and Numericalization </a></li>
 <li class="toc-entry toc-h1"><a href="#Language-Model">Language Model </a>
 <ul>
@@ -254,73 +258,19 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-817a72817bed&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">from</span> pathlib <span class="ansi-green-fg">import</span> Path
+<span class="ansi-green-intense-fg ansi-bold">      4</span> path <span class="ansi-blue-fg">=</span> Path<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'../../../data/all-the-news'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>con <span class="ansi-blue-fg">=</span> sqlite3<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">/</span><span class="ansi-blue-fg">'all_the_news.db'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> 
+<span class="ansi-green-intense-fg ansi-bold">      7</span> pd<span class="ansi-blue-fg">.</span>read_sql_query<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'SELECT publication, min(date),max(date), count(*) from news group by publication order by max(date) desc limit 5'</span><span class="ansi-blue-fg">,</span> con<span class="ansi-blue-fg">)</span>
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>publication</th>
-      <th>min(date)</th>
-      <th>max(date)</th>
-      <th>count(*)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Buzzfeed News</td>
-      <td>2016-02-19 00:00:00</td>
-      <td>2020-04-02 00:00:00</td>
-      <td>32819</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>The New York Times</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-04-01 13:42:08</td>
-      <td>252259</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Business Insider</td>
-      <td>2016-01-01 03:08:00</td>
-      <td>2020-04-01 01:48:46</td>
-      <td>57953</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Washington Post</td>
-      <td>2016-06-10 00:00:00</td>
-      <td>2020-04-01 00:00:00</td>
-      <td>40882</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>TMZ</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-04-01 00:00:00</td>
-      <td>49595</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">OperationalError</span>: unable to open database file</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -344,7 +294,220 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">"SELECT article from news where publication = 'The New York Times' and length(article) &gt; 10 order by random() limit 500"</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">"SELECT article from news where publication = 'The New York Times' and length(article) &gt; 10 order by random() limit 500000"</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-91a70959b4a7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>read_sql_query<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"SELECT article from news where publication = 'The New York Times' and length(article) &gt; 10 order by random() limit 500000"</span><span class="ansi-blue-fg">,</span>con<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name 'con' is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fastai-Language-Model">
+<a class="anchor" href="#Fastai-Language-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fastai Language Model<a class="anchor-link" href="#Fastai-Language-Model"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index(['article'], dtype='object')</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">TextDataLoaders</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">text_col</span><span class="o">=</span><span class="s1">'article'</span><span class="p">,</span> <span class="n">is_lm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">bs</span> <span class="o">=</span> <span class="mi">256</span><span class="p">)</span>
+<span class="n">learn</span> <span class="o">=</span> <span class="n">language_model_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">accuracy</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>accuracy</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>4.638541</td>
+      <td>4.003233</td>
+      <td>0.310014</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>4.383406</td>
+      <td>3.840407</td>
+      <td>0.315526</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>4.181806</td>
+      <td>3.784667</td>
+      <td>0.320918</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4.021165</td>
+      <td>3.772173</td>
+      <td>0.321951</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3.921133</td>
+      <td>3.770104</td>
+      <td>0.322276</td>
+      <td>00:14</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'lmlearner'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-5e12a9ed0493&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>learn <span class="ansi-blue-fg">=</span> learner<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name 'learner' is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">abcdef</span>
 </pre></div>
 
     </div>
