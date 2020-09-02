@@ -140,7 +140,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      16 min read
     
 </span></p>
 
@@ -248,263 +248,7 @@ window.onload = wrap_img;
 <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../../data/all-the-news'</span><span class="p">)</span>
 <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">'all_the_news.db'</span><span class="p">)</span>
 
-<span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">'SELECT publication, min(date),max(date), count(*) from news group by publication order by max(date) desc'</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>publication</th>
-      <th>min(date)</th>
-      <th>max(date)</th>
-      <th>count(*)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Buzzfeed News</td>
-      <td>2016-02-19 00:00:00</td>
-      <td>2020-04-02 00:00:00</td>
-      <td>32819</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>The New York Times</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-04-01 13:42:08</td>
-      <td>252259</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Business Insider</td>
-      <td>2016-01-01 03:08:00</td>
-      <td>2020-04-01 01:48:46</td>
-      <td>57953</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Washington Post</td>
-      <td>2016-06-10 00:00:00</td>
-      <td>2020-04-01 00:00:00</td>
-      <td>40882</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>TMZ</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-04-01 00:00:00</td>
-      <td>49595</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Refinery 29</td>
-      <td>2016-01-01 07:00:00</td>
-      <td>2020-04-01 00:00:00</td>
-      <td>111433</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Vox</td>
-      <td>2016-01-01 01:41:26</td>
-      <td>2020-03-31 23:50:00</td>
-      <td>47272</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>The Verge</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-03-31 00:00:00</td>
-      <td>52424</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Hyperallergic</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-03-31 00:00:00</td>
-      <td>13551</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>CNN</td>
-      <td>2016-01-01</td>
-      <td>2020-03-31 00:00:00</td>
-      <td>127602</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>CNBC</td>
-      <td>2016-01-01</td>
-      <td>2020-03-31 00:00:00</td>
-      <td>238096</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>TechCrunch</td>
-      <td>2016-01-01 08:00:19</td>
-      <td>2020-03-30 10:57:55</td>
-      <td>52095</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Wired</td>
-      <td>2016-01-01</td>
-      <td>2020-03-30 00:00:00</td>
-      <td>20243</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Reuters</td>
-      <td>2016-01-01</td>
-      <td>2020-03-30 00:00:00</td>
-      <td>840094</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>New Republic</td>
-      <td>2016-01-01</td>
-      <td>2020-03-30 00:00:00</td>
-      <td>11809</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Mashable</td>
-      <td>2016-01-01</td>
-      <td>2020-03-30 00:00:00</td>
-      <td>94107</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Economist</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-03-30 00:00:00</td>
-      <td>26227</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Vice</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2020-03-29 15:17:00</td>
-      <td>101137</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>The Hill</td>
-      <td>2016-01-01</td>
-      <td>2020-03-26 00:00:00</td>
-      <td>208411</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Politico</td>
-      <td>2016-01-01</td>
-      <td>2020-03-26 00:00:00</td>
-      <td>46377</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>New Yorker</td>
-      <td>2016-01-04</td>
-      <td>2020-02-17 00:00:00</td>
-      <td>4701</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Axios</td>
-      <td>2016-12-23 00:00:00</td>
-      <td>2020-01-01 00:00:00</td>
-      <td>47815</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>People</td>
-      <td>2016-01-01 00:05:00</td>
-      <td>2019-12-15 22:40:00</td>
-      <td>136488</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>Gizmodo</td>
-      <td>2016-01-01</td>
-      <td>2019-10-15 00:00:00</td>
-      <td>27228</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Vice News</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2019-08-07 00:00:00</td>
-      <td>15539</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td></td>
-      <td></td>
-      <td>2019-03-08 00:00:00</td>
-      <td>12578</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Fox News</td>
-      <td>2016-04-09</td>
-      <td>2018-08-14</td>
-      <td>20144</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I am going to pick the 5 most recent New York times Articles.  For the final model I will use all of the data, but for simplicity of demonstrating tokenization we will use just 5 articles.  Here is an example of the start of one of the articles</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">"SELECT article from news where publication = 'CNBC' and length(article) &gt; 10 order by random() limit 500000"</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
+<span class="c1">#pub_stats = pd.read_sql_query('SELECT publication, min(date),max(date), count(*) as cnt from news group by publication order by max(date) desc', con)</span>
 </pre></div>
 
     </div>
@@ -530,26 +274,21 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># bs=128</span>
+<span class="c1"># for publisher in list(pub_stats[pub_stats.cnt &gt; 100000].publication):</span>
+<span class="c1">#     print(publisher)</span>
+<span class="c1">#     query = f"SELECT article from news where publication = '%s' and length(article) &gt; 10 order by random()"%(publisher)</span>
+<span class="c1">#     print(query)</span>
+<span class="c1">#     df = pd.read_sql_query(query,con)</span>
+<span class="c1">#     dls = TextDataLoaders.from_df(df, text_col='article', is_lm=True,bs = bs)</span>
+<span class="c1">#     learn = language_model_learner(dls, AWD_LSTM, metrics=accuracy)</span>
+<span class="c1">#     learn.fine_tune(5)</span>
+<span class="c1">#     fname = f'lm_all_%s_%sArticles'%(publisher,str(pub_stats[pub_stats.publication == publisher].cnt.values))</span>
+<span class="c1">#     learn.save(fname)</span>
+<span class="c1">#     print(fname+': Complete')</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Index(['article'], dtype='object')</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -563,10 +302,14 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bs</span><span class="o">=</span><span class="mi">128</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">publisher</span> <span class="o">=</span> <span class="s1">'The New York Times'</span>
+<span class="n">records</span> <span class="o">=</span> <span class="s1">'75000'</span>
+<span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"SELECT article from news where publication = '%s' and length(article) &gt; 10 order by random() limit %s"</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="n">con</span><span class="p">)</span>
+<span class="n">bs</span><span class="o">=</span><span class="mi">128</span>
 <span class="n">dls</span> <span class="o">=</span> <span class="n">TextDataLoaders</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">text_col</span><span class="o">=</span><span class="s1">'article'</span><span class="p">,</span> <span class="n">is_lm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">bs</span> <span class="o">=</span> <span class="n">bs</span><span class="p">)</span>
 <span class="n">learn</span> <span class="o">=</span> <span class="n">language_model_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">accuracy</span><span class="p">)</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -602,10 +345,10 @@ window.onload = wrap_img;
   <tbody>
     <tr>
       <td>0</td>
-      <td>nan</td>
-      <td>3.649046</td>
-      <td>0.342520</td>
-      <td>22:36</td>
+      <td>4.203725</td>
+      <td>3.690516</td>
+      <td>0.341063</td>
+      <td>1:08:03</td>
     </tr>
   </tbody>
 </table>
@@ -630,38 +373,10 @@ window.onload = wrap_img;
   <tbody>
     <tr>
       <td>0</td>
-      <td>nan</td>
-      <td>3.519593</td>
-      <td>0.358146</td>
-      <td>24:01</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>nan</td>
-      <td>3.412565</td>
-      <td>0.369808</td>
-      <td>23:58</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>nan</td>
-      <td>3.356618</td>
-      <td>0.376045</td>
-      <td>24:06</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>nan</td>
-      <td>3.332409</td>
-      <td>0.378788</td>
-      <td>24:09</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>nan</td>
-      <td>3.327978</td>
-      <td>0.379292</td>
-      <td>24:18</td>
+      <td>3.977097</td>
+      <td>3.574996</td>
+      <td>0.356949</td>
+      <td>1:11:33</td>
     </tr>
   </tbody>
 </table>
@@ -682,26 +397,13 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'lmlearner_n50000'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">bs</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'lm_all_%s_%sArticles_%s'</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">iteration</span><span class="p">))</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Path('models/lmlearner_n50000128.pth')</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -715,8 +417,29 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'The reason Trump cares about immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'lm_all_%s_%sArticles_%s'</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">iteration</span><span class="p">))</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'Immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+    
 </pre></div>
 
     </div>
@@ -738,7 +461,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is Wednesday 's resignation of former National Security Advisor Paul Langer , who is led by the Whites National Turkish President Jack Dorsey , according to a report from the White House . The White
+<pre>Immigration is a disaster . After protesters closed as ambulances took their burial unconscious — so we was n’t alone , their rocks or not — “ somebody could use dying everywhere ? ” The failure to encourage migrants should be seen as something Republicans will always view : the prospect of “ standard people where terrorists could continue to behave and trust . ” In this instance , they demand that sugarcoat what Mr . Amodei calls an item : by “ simple welfare , ” the United States Department of
 </pre>
 </div>
 </div>
@@ -755,7 +478,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is his official slogan solanezumab undersea exchange that wonders the only things that happened in 1994 , as the Great Wall taner amazon underground and has a top 5 , 000 fallerfallerfaller ... He consider saying there are issues of values and threat the economy will
+<pre>Immigration is a hey , fast - growing , economic - changing match . Our Obnoxious family is part of these Muslim - majority Hong Kong newspapers . Meredith Murdoch , 16 , recently became the existence of the episode ’s producer of jo - davidson Hajj Temple , a Wildly Muslim journalism , about Ellsberg ’s mayoral campaign on the Mcnally Wattage . “ in fact , no reason for it ’s going to be tangled later and probably everyone gets to visit the Royal
 </pre>
 </div>
 </div>
@@ -772,7 +495,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is why the economic growth has slowed . Taxes are potentially free from tax increases that could have profound consequences . Tax reform — which requires management — powers the tax code to inflate earnings ratios , estimates being a signiﬁcant scenario of 19.4 percent and 47 percent of
+<pre>Immigration is a good way to reduce immigration and border violence . L.G.B.T . migrants are n’t allowed to travel freely . Bills . From the muralist social identity group : Black Americans with money and expressing their values , today is a root cause of our departure from Europe . a waiting line for stepping back in crisis ? Keeps us safe . Wall Street and Quarantine Less , podcaster ’s best - known Muslim - variety punishing religion , is to get more aggressive and garrulous .
 </pre>
 </div>
 </div>
@@ -789,7 +512,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is because at least some claims that made direct trade deals optimistically are just necessary . For example , the firm plans to hire people so they can shift their spending , but that has not allowed individual companies to take benefits ; they are doing initiatives like business technology
+<pre>Immigration is a problem and it can be known to many years that the one - star equivalent of post - immigration interviews with the United States Navy has revealed some , special servicer and federal tax laws that intervened in Congress last month . But President Trump has said lost policy . The White House , in a lawsuit against the White House , said in chief of the Intelligence Committee , the federal administration , that “ plotting Trump is a propaganda system of technological
 </pre>
 </div>
 </div>
@@ -806,92 +529,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is not the titanic market emergency , but since Britain paid for Canada the rights to funding certain undocumented rights , Trump said that there was how too many people could using immigration duty . Gspc has largely invested in the local investment machinery carrier Dunkin
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is that Trump has a much more aggressive sleepy lunch harder when he comes to the house for it . He 's become the top Republican in the presidency . He 's driving on from a growing base . He has already started such a drive
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is his weekend photo assistant . He said " Since December the Axios issue does n't send you in a living room . You 'll do something about yup . I would well see that what happens in next year after you die . "
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is the 50 percent tax policy on both sides of the aisle and tragic implications for his Steve Bannon campaign . Trump gave his name on Monday as his sniffer timer . The ties between Sweep and Goldman accounts can be evident in their
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is as Federal Reserve officials and private equity executives , including Wilbur Ross , Transportation Secretary Wilbur Ross , and Southwest Airlines , have experienced less oversight and employee spending and screws said . " these shorts were ineffective in recent
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Trump cares about immigration is , he says , that retiring , and working on a solid choice of white house with Republicans around China — in powerful U.S . view is the sort of way Trump obstructed a Democratic presidential nominee by attacking voters . When Trump
+<pre>Immigration is more affordable . Social workers have made up up abuse and criminal behavior in Europe , and those illegally have asylum seekers stationed in worked areas in Bangladesh . One of the refugees is the same woman who rented an equipment company called La Sponsors in Expat that ended when they took to Italy by home from home . a kidnap is coming off in Morocco . Ya no plastics , ” found in a car parked there after the motorcycle were stolen from a bakery in Lowlands .
 </pre>
 </div>
 </div>
@@ -909,8 +547,78 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'The reason Biden cares about immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>accuracy</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>3.771372</td>
+      <td>3.453298</td>
+      <td>0.373525</td>
+      <td>1:10:55</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'lm_all_%s_%sArticles_%s'</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">iteration</span><span class="p">))</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'Immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -932,7 +640,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is . He 's drove the airline away from a sweeping public boundaries car sale , which helps shareholders . Bombast , or policing , has caused parallels for Tesla 's history , immigration and our trade relationship . Denmark 's Bounty Force said it
+<pre>Immigration is second most important of the generation and back in the country . In Germany , it ’s cheaper and more common in international immigration policies , maintaining free immigration and low - income roots . In an order to reverse such rules and reduce immigration , immigrants from northern Europe seem to be seeing the pain that has transformed the colonial regimes , like the American West . In Germany , she frequently strome migrants and migrants from places like Germany and Germany . _____ 33333 .....
 </pre>
 </div>
 </div>
@@ -949,7 +657,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is because he explains not to say why he should be doing everything that could be done and he contains even the most important things . At the beginning of August , the Federal Reserve quickly stopped speed of on ronna and trips to Chile .
+<pre>Immigration is the country ’s good job , but it has even become the world ’s biggest normal expenses regimen . The United States is fighting global migration , our dumping record in uncertainty U.S . is not going to beat China , North Korea did not want taxes and fight for safe - open democracy . FLORENCE , France — In a modest French town , the French hospital in Lech , Mont . , announced a three - day March on Saturday for the
 </pre>
 </div>
 </div>
@@ -966,7 +674,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is no one plan to completely support refugees . But President Barack Obama on Tuesday laid out Obama 's potential base for immigration , saying that " who i am not going to make to wear with a lawyer like every other 34-year - old
+<pre>Immigration is everything , civil rights advocates know . Criminal justice is survived by economic expert lists , and adventurism . Often generally , because of a voter fraud policies , danger shrank , living conditions could be treated as a parting positive , especially in capital cases . Through a technical analysis , that found that of the three undecided respondents who attended the fair , check characterizes the 14th carriage in 2012 on normal lines . Well , racial chaos in the race was inevitably mercurial . West Distinction was no exception .
 </pre>
 </div>
 </div>
@@ -983,7 +691,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is because there are closed corporate districts , and candidates paying attention to lost faith did n't run a good plan as what was to be done . And Democrats kept there for a third of the time he took office , parish council s - u - lago
+<pre>Immigration is something of a kind of distraction — one or two — in and out of this city : Last year , we warned anybody in London that the influential african - american police allegations exaggerated public voting and made it harder for blacks to flee . As licensed felons members of her community from the political establishment , Americans for years found themselves activating the small guns that are in the front row of Arlington Brooklynmuseum.org in Baltimore . One of those public transgressions — the anti - trump penalties of voting
 </pre>
 </div>
 </div>
@@ -1000,7 +708,135 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is " to book immigration . " In the fourth quarter , however , Biden needed to take off a brief tie for the election . " i know that , I 've got , i really ca n't even think esiner the special counsel nancy Sanders
+<pre>Immigration is the kind of culture that Donald J. Trump has talked to , and it will be a provocation for the country . WASHINGTON — The pomp and symbolism of the American International Cruises Parade , the economic development of the United States and escalating tensions between countries , unfolded draped in white , biking , flying melancholic new guns , groundless Trump court battles on low - key Mexican immigrants . a crater of current crystal for return — and sheer hazard — includes dentistry , roasting
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>accuracy</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>3.683887</td>
+      <td>3.408224</td>
+      <td>0.378588</td>
+      <td>1:11:24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'lm_all_%s_%sArticles_%s'</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">iteration</span><span class="p">))</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'Immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Immigration is the main concern for immigration . Businesses across its State of the Union have some free customers for parts of their pay services . An independent union currently represents contracts with unions , labor unions and talent companies . Under the Jobs and Labor Act 2012 , most workers under “ LESBIAN , Gay , L.G.B.T.Q . and Latino Legal Aid ” are arrested , the week after federal immigration agents decide to rescind , to make sure it enters the United States .
 </pre>
 </div>
 </div>
@@ -1017,7 +853,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is , he says , . The Trump administration sat down with the U.S . Defense Department not only in Washington , but also in Washington . Lawmakers also contended with his polling , election ambitions and the ongoing discussions by financial experts
+<pre>Immigration is a good thing must feel a bit unequal to the Republican Party . It is certainly not guaranteed that this is the right question . When Representative Ed Shelby , a Republican from Alabama , a late - night marvel of the vicious Democratic groove in Alabama , had a calming effect on Republicans in 2012 , Democrats were angry — he turned down a promise from Republicans to join the House but recovered in front of state officials and putting his фбр in jeopardy
 </pre>
 </div>
 </div>
@@ -1034,7 +870,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is with regulations that ask for race and bowe — one of the biggest exceptions he has ever found — on his section of the vehicle to ladder across bridges and bridges in the country . But diversity among medals was not nominated by most American organizations , but
+<pre>Immigration is a central issue at United States immigration courts in holy weeks from the beginning of much of the boroughs . As Senate Republicans , as with the Supreme Court in Los Angeles , have sidestepped the Supreme Court issue 12 times this year , Democrats will be may be better off showing expected relief . CALIFORNIA — christian leaders in Congress received 50 amicus brief briefs from Statute of Limitations this fall . Lead nominees may be re - evaluated in an interview
 </pre>
 </div>
 </div>
@@ -1051,7 +887,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is a background band that includes rights experts including Fedexcup Michelle Trump and Jay Inslee . He said Tuesday that an illegal incursion into the Northeast could put Virginia in the middle in a turn to enter a slowdown . Trump
+<pre>Immigration is one of the few issues whose most pressing rivals are museums , and specific for the museum and auction houses . We find Facebook and Google Maps convulsions and jarring anxiety , as well as sporting events like the Wimbledon Exhibition , a Modi ’s Heritage exhibition and recent work on Rosenworcel 1960s Queens . Upbeat , oneself : “ you learn from what they provide . ” This time of week , Harrison Haven has shown its history and experienced investment in minimalist culture .
 </pre>
 </div>
 </div>
@@ -1068,28 +904,171 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is about getting back to Europe at international trade . " that 's because of our trade war with the European Union and so it 's a political measure , not a scenario that is eating in the U.S . " Peter Navarro , director
+<pre>Immigration is the first parallel history , going over the tennessee - maine border ; since President Obama stood upright , he broke the locks of the two men in a sign that has been crucially welcoming the traditional American League . Indeed , the definition of American customs has gotten New Order , America ’s former business partner , and Mr . Trump . When Mr . Trump kept Consul Pope Francis in my office — that ’s how it was remained — situations
 </pre>
 </div>
 </div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 <div class="output_area">
 
 
 <div class="output_html rendered_html output_subarea ">
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>accuracy</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>3.694877</td>
+      <td>3.379420</td>
+      <td>0.381612</td>
+      <td>1:11:08</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 </div>
 
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The reason Biden cares about immigration is because people could move forward , known as Advanced America Mrs . Trump , to address Qatar 's warming to history for thousands of decades . On travel from safe - haven China to France and the United States ,
-</pre>
 </div>
 </div>
 
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'lm_all_%s_%sArticles_%s'</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">iteration</span><span class="p">))</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'Immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'lm_all_%s_%sArticles_%s'</span><span class="o">%</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="n">records</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">iteration</span><span class="p">))</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'Immigration is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">'Abortion is'</span><span class="p">,</span><span class="n">n_words</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
