@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>APL - Geometry of Linear Equations (18.06_L1) | Isaac’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="APL - Geometry of Linear Equations (18.06_L1)" />
+<meta name="author" content="Isaac Flath" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linear Algebra - An introduction to Systems of Linear Equations" />
+<meta property="og:description" content="Linear Algebra - An introduction to Systems of Linear Equations" />
+<link rel="canonical" href="https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html" />
+<meta property="og:url" content="https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html" />
+<meta property="og:site_name" content="Isaac’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-30T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Linear Algebra - An introduction to Systems of Linear Equations","@type":"BlogPosting","headline":"APL - Geometry of Linear Equations (18.06_L1)","url":"https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html","datePublished":"2020-09-30T00:00:00-05:00","dateModified":"2020-09-30T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-170233952-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>APL - Geometry of Linear Equations (18.06_L1) | Isaac’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="APL - Geometry of Linear Equations (18.06_L1)" />
+<meta name="author" content="Isaac Flath" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linear Algebra - An introduction to Systems of Linear Equations" />
+<meta property="og:description" content="Linear Algebra - An introduction to Systems of Linear Equations" />
+<link rel="canonical" href="https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html" />
+<meta property="og:url" content="https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html" />
+<meta property="og:site_name" content="Isaac’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-30T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Linear Algebra - An introduction to Systems of Linear Equations","@type":"BlogPosting","headline":"APL - Geometry of Linear Equations (18.06_L1)","url":"https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html","datePublished":"2020-09-30T00:00:00-05:00","dateModified":"2020-09-30T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-170233952-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script type="text/javascript">
+require.config({
+  paths: {
+    jquery: 'https://code.jquery.com/jquery-3.5.0.min',
+    plotly: 'https://cdn.plot.ly/plotly-latest.min'
+  },
+
+  shim: {
+    plotly: {
+      deps: ['jquery'],
+      exports: 'plotly'
+    }
+  }
+});
+</script>
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Isaac&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">APL - Geometry of Linear Equations (18.06_L1)</h1><p class="page-description">Linear Algebra - An introduction to Systems of Linear Equations</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-09-30T00:00:00-05:00" itemprop="datePublished">
+        Sep 30, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Isaac Flath</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Linear Algebra">Linear Algebra</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/Isaac-Flath/blog/tree/master/_notebooks/2020-09-30-APL - Geometry of Linear Equations (18.06_L1).ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/Isaac-Flath/blog/master?filepath=_notebooks%2F2020-09-30-APL+-+Geometry+of+Linear+Equations+%2818.06_L1%29.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/Isaac-Flath/blog/blob/master/_notebooks/2020-09-30-APL - Geometry of Linear Equations (18.06_L1).ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Motivation">Motivation </a></li>
+<li class="toc-entry toc-h1"><a href="#Matrix-Multiplication">Matrix Multiplication </a></li>
+<li class="toc-entry toc-h1"><a href="#Calculating-Y-values">Calculating Y values </a></li>
+<li class="toc-entry toc-h1"><a href="#Elimination">Elimination </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-09-30-APL - Geometry of Linear Equations (18.06_L1).ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Motivation">
+<a class="anchor" href="#Motivation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Motivation<a class="anchor-link" href="#Motivation"> </a>
+</h1>
+<p>I am retaking this linear algebra course with 2 intentions.</p>
+<p>First, I want to learn Dyalog APL - which is a super cool and powerful way to do linear algebra and numerical transforms.  The second is to get a better understanding of Linear Algebra.  I would love to achieve 'fluency' in linear algebra.</p>
+<p>I will be doing everything in APL.  So what is APL?  I think of it as a better regex for linear algebra.  Like regex, it is very condensed with different symbols representing different operations.  Like regex, you can combine these symbols in many different ways to achieve almost anything (but in linear algebra instead of text).  Unlike regex, APL is it's own full language in itself and not some string sitting inside of another language.</p>
+<p>This blog post will be my notes about Lecture 1 from the following course:</p>
+<p>Gilbert Strang. 18.06 Linear Algebra. Spring 2010. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Matrix-Multiplication">
+<a class="anchor" href="#Matrix-Multiplication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Matrix Multiplication<a class="anchor-link" href="#Matrix-Multiplication"> </a>
+</h1>
+<p>Imagine we want to multiply 2 matrices together, a1 and a2.  How should we think about it?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">+</span> <span class="n">a1</span> <span class="err">←</span> <span class="mi">2</span> <span class="mi">2</span> <span class="err">⍴</span> <span class="mi">2</span> <span class="mi">5</span> <span class="mi">1</span> <span class="mi">3</span>
+<span class="o">+</span> <span class="n">a2</span> <span class="err">←</span> <span class="mi">2</span> <span class="mi">1</span> <span class="err">⍴</span> <span class="mi">1</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">2 5
+1 3
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">1
+2
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The result is a linear combination of the columns of ar1 which we can of course write in APL like this</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span><span class="err">←</span><span class="n">a1</span><span class="p">[;</span><span class="mi">1</span><span class="p">]</span><span class="err">×</span><span class="n">a2</span><span class="p">[</span><span class="mi">1</span><span class="p">;]</span> <span class="err">⍝</span> <span class="n">Column</span> <span class="mi">1</span> <span class="n">of</span> <span class="n">a1</span> <span class="n">time</span> <span class="n">row</span> <span class="mi">1</span> <span class="n">of</span> <span class="n">a2</span>
+<span class="n">c2</span><span class="err">←</span><span class="n">a1</span><span class="p">[;</span><span class="mi">2</span><span class="p">]</span><span class="err">×</span><span class="n">a2</span><span class="p">[</span><span class="mi">2</span><span class="p">;]</span> <span class="err">⍝</span> <span class="n">Column</span> <span class="mi">2</span> <span class="n">of</span> <span class="n">a1</span> <span class="n">time</span> <span class="n">row</span> <span class="mi">2</span> <span class="n">of</span> <span class="n">a2</span>
+<span class="n">c1</span><span class="o">+</span><span class="n">c2</span> <span class="err">⍝</span> <span class="n">Sum</span> <span class="n">those</span> <span class="n">up</span> <span class="k">as</span> <span class="n">a</span> <span class="n">linear</span> <span class="n">combination</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">12 7
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A better way to do this in APL is to condense it down using an inner product.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span><span class="o">+.</span><span class="err">×</span><span class="n">a2</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">12
+ 7
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So lets walk through the example of +.× and see why we get the correct answer and what it is doing.</p>
+<p>What the . does is gives us a framework or structure for the answer.  We take combinations of rows columns, which gives us the following equations to calculate our 2 numbers.</p>
+<p>(2 ?1? 1) ?2? (5 ?1? 2)</p>
+<p>(1 ?1? 1) ?2? (3 ?1? 2)</p>
+<p>Then we need to define the 2 unknown operators (?1? and ?2?).  These are defined by the operators on each side of the dot.  Normal matrix multiplication means ?1? = * and ?2? = +, which is why +.x gives us matrix multiplication.  But really we could put any operators in there.  Addition, division, subtraction, exponents, min or max, or any other operator you can think of or create.</p>
+<p>Another way to think about the same thing is to do this in three steps</p>
+<p><strong>Create our inner product matrices (rows * columns from original matrices):</strong></p>
+<p>$\begin{bmatrix}?&amp;&amp;1\\&amp;?&amp;2\\2&amp;5&amp;\end{bmatrix}$
+$\begin{bmatrix}?&amp;&amp;1\\&amp;?&amp;2\\1&amp;3&amp;\end{bmatrix}$</p>
+<p><strong>Use the final operator (multiplication) to fill in the ?</strong></p>
+<p>$\begin{bmatrix}2&amp;\\&amp;10\end{bmatrix}$
+$\begin{bmatrix}1&amp;\\&amp;6\end{bmatrix}$</p>
+<p><strong>Use the first operator to combine the ?</strong></p>
+<p>$10+2 = 12$</p>
+<p>$1+6 = 7$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we understand that, we can flip our operators and look at ×.+ instead of +.×. We can also do any number of other operators to do lots of different matrix operations.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="err">⍝</span> <span class="n">using</span> <span class="n">addition</span><span class="o">.</span><span class="n">multiplication</span> <span class="p">(</span><span class="n">normal</span> <span class="n">matrix</span> <span class="n">multiplication</span><span class="p">)</span> 
+<span class="n">a1</span><span class="o">+.</span><span class="err">×</span><span class="n">a2</span> 
+
+<span class="err">⍝</span> <span class="n">using</span> <span class="n">multiplication</span><span class="o">.</span><span class="n">addition</span>
+<span class="n">a1</span><span class="err">×</span><span class="o">.+</span><span class="n">a2</span> 
+
+<span class="err">⍝</span> <span class="n">using</span> <span class="nb">max</span><span class="o">.</span><span class="n">min</span>
+<span class="n">a1</span><span class="err">⌈</span><span class="o">.</span><span class="err">⌊</span><span class="n">a2</span>
+
+<span class="err">⍝</span> <span class="n">using</span> <span class="n">addition</span><span class="o">.</span><span class="n">subtraction</span>
+<span class="n">a1</span><span class="o">-.+</span><span class="n">a2</span>
+
+<span class="err">⍝</span> <span class="n">using</span> <span class="n">exponent</span><span class="o">.</span><span class="n">division</span>
+<span class="n">a1</span><span class="o">*.</span><span class="err">÷</span><span class="n">a2</span>
+
+<span class="err">⍝</span> <span class="n">using</span> <span class="n">factorial</span><span class="o">.</span><span class="n">natural_log</span>
+<span class="n">a1</span><span class="o">!</span>.⍟a2
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">12
+ 7
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">21
+10
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">2
+2
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">¯4
+¯3
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">5.65685
+1      
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">1      
+0.63093
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Calculating-Y-values">
+<a class="anchor" href="#Calculating-Y-values" aria-hidden="true"><span class="octicon octicon-link"></span></a>Calculating Y values<a class="anchor-link" href="#Calculating-Y-values"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's imaging we have a system of 2 equations and want to graph them.  How would we solve for many values of x in APL?  Let's just use the same example we had above</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">+</span> <span class="n">res</span> <span class="err">←</span> <span class="n">a1</span> <span class="err">÷</span> <span class="mi">2</span><span class="o">/</span><span class="n">a2</span> <span class="err">⍝</span> <span class="n">Isolate</span> <span class="n">function</span> <span class="n">so</span> <span class="n">right</span> <span class="n">side</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">1</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">instanced</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">2   5  
+0.5 1.5
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="err">⍝</span> <span class="n">calculate</span> <span class="n">y</span> <span class="n">values</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">is</span> <span class="mi">1</span> <span class="n">through</span> <span class="mi">10</span>
+<span class="n">xs</span> <span class="err">←</span> <span class="err">⍳</span><span class="mi">10</span>
+<span class="p">(</span><span class="n">res</span><span class="p">[;</span><span class="mi">1</span><span class="p">]</span> <span class="err">∘</span><span class="o">.</span><span class="err">×</span> <span class="n">xs</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="err">⍴</span> <span class="n">xs</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="mi">1</span> <span class="err">⍴</span> <span class="n">res</span><span class="p">[;</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">7 9   11 13   15 17   19 21   23 25  
+2 2.5  3  3.5  4  4.5  5  5.5  6  6.5
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And there you have it!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Elimination">
+<a class="anchor" href="#Elimination" aria-hidden="true"><span class="octicon octicon-link"></span></a>Elimination<a class="anchor-link" href="#Elimination"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">+</span><span class="n">A</span> <span class="err">←</span> <span class="mi">3</span> <span class="mi">3</span> <span class="err">⍴</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">8</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">4</span> <span class="mi">1</span>
+<span class="n">v</span> <span class="err">←</span> <span class="mi">3</span> <span class="mi">1</span> <span class="err">⍴</span> <span class="mi">2</span> <span class="mi">12</span> <span class="mi">2</span>
+<span class="n">E21</span> <span class="err">←</span> <span class="mi">3</span> <span class="mi">3</span> <span class="err">⍴</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="mi">1</span><span class="p">]</span><span class="err">×¯</span><span class="mi">1</span><span class="err">÷</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">])</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">E31</span> <span class="err">←</span> <span class="mi">3</span> <span class="mi">3</span> <span class="err">⍴</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="p">((</span><span class="n">E21</span><span class="o">+.</span><span class="err">×</span><span class="n">A</span><span class="p">)[</span><span class="mi">3</span><span class="p">;</span><span class="mi">1</span><span class="p">]</span><span class="err">×¯</span><span class="mi">1</span><span class="err">÷</span><span class="p">(</span><span class="n">E21</span><span class="o">+.</span><span class="err">×</span><span class="n">A</span><span class="p">)[</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">])</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">E32</span> <span class="err">←</span> <span class="mi">3</span> <span class="mi">3</span> <span class="err">⍴</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">((</span><span class="n">E31</span><span class="o">+.</span><span class="err">×</span><span class="n">E21</span><span class="o">+.</span><span class="err">×</span><span class="n">A</span><span class="p">)[</span><span class="mi">3</span><span class="p">;</span><span class="mi">2</span><span class="p">]</span><span class="err">×¯</span><span class="mi">1</span><span class="err">÷</span><span class="p">(</span><span class="n">E31</span><span class="o">+.</span><span class="err">×</span><span class="n">E21</span><span class="o">+.</span><span class="err">×</span><span class="n">A</span><span class="p">)[</span><span class="mi">2</span><span class="p">;</span><span class="mi">2</span><span class="p">])</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">1 2 1
+3 8 1
+0 4 1
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">E32</span><span class="o">+.</span><span class="err">×</span><span class="n">E31</span><span class="o">+.</span><span class="err">×</span><span class="n">E21</span><span class="o">+.</span><span class="err">×</span><span class="n">v</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">  2
+  6
+¯10
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Isaac-Flath/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/linear%20algebra/2020/09/30/APL-Geometry-of-Linear-Equations-(18.06_L1).html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A place for Isaac to write blog posts on things that interest him or those that he talks to.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Isaac-Flath" title="Isaac-Flath"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/IsaacFlath" title="IsaacFlath"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
