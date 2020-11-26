@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://isaac-flath.github.io/blog/1900/01/01/LanguageModel.html</loc>
-<lastmod>1900-01-01T00:00:00-06:00</lastmod>
-</url>
-<url>
-<loc>https://isaac-flath.github.io/blog/1900/01/01/LanguageModelLSTM.html</loc>
-<lastmod>1900-01-01T00:00:00-06:00</lastmod>
-</url>
-<url>
 <loc>https://isaac-flath.github.io/blog/jupyter/2020/05/07/JupyterNotebooks.html</loc>
 <lastmod>2020-05-07T00:00:00-05:00</lastmod>
 </url>
@@ -127,6 +119,14 @@
 <url>
 <loc>https://isaac-flath.github.io/blog/ci/githubactions/nbdev/2020/11/06/GithubActionsSecrets.html</loc>
 <lastmod>2020-11-06T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://isaac-flath.github.io/blog/2020/11/25/Untitled.html</loc>
+<lastmod>2020-11-25T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html</loc>
+<lastmod>2020-11-26T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://isaac-flath.github.io/blog/about/</loc>
