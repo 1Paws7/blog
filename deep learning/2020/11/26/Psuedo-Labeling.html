@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Psuedo Labeling | Isaac’s Blog</title>
+<title>Pseudo Labeling | Isaac’s Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Psuedo Labeling" />
+<meta property="og:title" content="Pseudo Labeling" />
 <meta name="author" content="Isaac Flath" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Psuedo Labeling basics for Noise Reduction and Data Creation" />
-<meta property="og:description" content="Psuedo Labeling basics for Noise Reduction and Data Creation" />
+<meta name="description" content="Pseudo Labeling basics for Noise Reduction and Data Creation" />
+<meta property="og:description" content="Pseudo Labeling basics for Noise Reduction and Data Creation" />
 <link rel="canonical" href="https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html" />
 <meta property="og:url" content="https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html" />
 <meta property="og:site_name" content="Isaac’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-26T00:00:00-06:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Psuedo Labeling basics for Noise Reduction and Data Creation","@type":"BlogPosting","headline":"Psuedo Labeling","url":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html","datePublished":"2020-11-26T00:00:00-06:00","dateModified":"2020-11-26T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Pseudo Labeling basics for Noise Reduction and Data Creation","@type":"BlogPosting","headline":"Pseudo Labeling","url":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html","datePublished":"2020-11-26T00:00:00-06:00","dateModified":"2020-11-26T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://isaac-flath.github.io/blog/feed.xml" title="Isaac's Blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -25,20 +25,20 @@
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-170233952-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Psuedo Labeling | Isaac’s Blog</title>
+<title>Pseudo Labeling | Isaac’s Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Psuedo Labeling" />
+<meta property="og:title" content="Pseudo Labeling" />
 <meta name="author" content="Isaac Flath" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Psuedo Labeling basics for Noise Reduction and Data Creation" />
-<meta property="og:description" content="Psuedo Labeling basics for Noise Reduction and Data Creation" />
+<meta name="description" content="Pseudo Labeling basics for Noise Reduction and Data Creation" />
+<meta property="og:description" content="Pseudo Labeling basics for Noise Reduction and Data Creation" />
 <link rel="canonical" href="https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html" />
 <meta property="og:url" content="https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html" />
 <meta property="og:site_name" content="Isaac’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-26T00:00:00-06:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Psuedo Labeling basics for Noise Reduction and Data Creation","@type":"BlogPosting","headline":"Psuedo Labeling","url":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html","datePublished":"2020-11-26T00:00:00-06:00","dateModified":"2020-11-26T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Isaac Flath"},"description":"Pseudo Labeling basics for Noise Reduction and Data Creation","@type":"BlogPosting","headline":"Pseudo Labeling","url":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html","datePublished":"2020-11-26T00:00:00-06:00","dateModified":"2020-11-26T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Psuedo-Labeling.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -132,7 +132,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Psuedo Labeling</h1><p class="page-description">Psuedo Labeling basics for Noise Reduction and Data Creation</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-11-26T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Pseudo Labeling</h1><p class="page-description">Pseudo Labeling basics for Noise Reduction and Data Creation</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-11-26T00:00:00-06:00" itemprop="datePublished">
         Nov 26, 2020
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -180,14 +180,14 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Intro">Intro </a></li>
-<li class="toc-entry toc-h1"><a href="#What-is-Psuedo-Labeling">What is Psuedo Labeling </a></li>
-<li class="toc-entry toc-h1"><a href="#Why-would-I-use-Psuedo-Labeling?">Why would I use Psuedo Labeling? </a>
+<li class="toc-entry toc-h1"><a href="#What-is-pseudo-labeling">What is pseudo labeling </a></li>
+<li class="toc-entry toc-h1"><a href="#Why-would-I-use-pseudo-labeling?">Why would I use pseudo labeling? </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Data-Cleaning-&-Noise-Reduction">Data Cleaning &amp; Noise Reduction </a></li>
 <li class="toc-entry toc-h2"><a href="#Data-Augmentation">Data Augmentation </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#How-to-use-Psuedo-Labeling-(Noise-Reduction)">How to use Psuedo Labeling (Noise Reduction) </a>
+<li class="toc-entry toc-h1"><a href="#How-to-use-pseudo-labeling-(Noise-Reduction)">How to use pseudo labeling (Noise Reduction) </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Imports">Imports </a></li>
 <li class="toc-entry toc-h2"><a href="#Introduce-Noise-to-Data">Introduce Noise to Data </a></li>
@@ -222,8 +222,8 @@ window.onload = wrap_img;
 <h1 id="Intro">
 <a class="anchor" href="#Intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro<a class="anchor-link" href="#Intro"> </a>
 </h1>
-<p><strong>Goal:</strong> The goal of this article is to provide an understanding of what psuedo labeling is, why you might use it, and how you would go about using it.</p>
-<p><strong>What's Included in this post:</strong> The information needed to get <strong>started</strong> on psuedo labeling on your project.</p>
+<p><strong>Goal:</strong> The goal of this article is to provide an understanding of what pseudo labeling is, why you might use it, and how you would go about using it.</p>
+<p><strong>What's Included in this post:</strong> The information needed to get <strong>started</strong> on pseudo labeling on your project.</p>
 
 </div>
 </div>
@@ -231,10 +231,10 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-is-Psuedo-Labeling">
-<a class="anchor" href="#What-is-Psuedo-Labeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Psuedo Labeling<a class="anchor-link" href="#What-is-Psuedo-Labeling"> </a>
+<h1 id="What-is-pseudo-labeling">
+<a class="anchor" href="#What-is-pseudo-labeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is pseudo labeling<a class="anchor-link" href="#What-is-pseudo-labeling"> </a>
 </h1>
-<p><strong>Psuedo Labeling</strong> is the process of creating new labels for a piece of data.</p>
+<p><strong>Pseudo Labeling</strong> is the process of creating new labels for a piece of data.</p>
 <p>The general idea can be broken into a few steps:</p>
 <ol>
 <li>Create a model</li>
@@ -250,10 +250,10 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Why-would-I-use-Psuedo-Labeling?">
-<a class="anchor" href="#Why-would-I-use-Psuedo-Labeling?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why would I use Psuedo Labeling?<a class="anchor-link" href="#Why-would-I-use-Psuedo-Labeling?"> </a>
+<h1 id="Why-would-I-use-pseudo-labeling?">
+<a class="anchor" href="#Why-would-I-use-pseudo-labeling?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why would I use pseudo labeling?<a class="anchor-link" href="#Why-would-I-use-pseudo-labeling?"> </a>
 </h1>
-<p>There are three main functions Psuedo Labeling can be used for.  I will step through each and provide a general</p>
+<p>There are three main functions pseudo Labeling can be used for.  I will step through each and provide a general</p>
 <h2 id="Data-Cleaning-&amp;-Noise-Reduction">
 <a class="anchor" href="#Data-Cleaning-&amp;-Noise-Reduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Cleaning &amp; Noise Reduction<a class="anchor-link" href="#Data-Cleaning-&amp;-Noise-Reduction"> </a>
 </h2>
@@ -262,7 +262,7 @@ window.onload = wrap_img;
 <li>Go through every datapoint again and manually verify them all</li>
 <li>Somehow identify the ones that are likely to be wrong and put more focus on those ones.</li>
 </ol>
-<p>Psuedo labeling can help with option number 2.  By creating a prediction on a datapoint, you can see which labels the model disagrees with.  Even better, you can look at the confidence that model has in the prediction.  So by looking at datapoints that the model is confident are wrong, you can really narrow your focus on your problem areas quickly.</p>
+<p>Pseudo labeling can help with option number 2.  By creating a prediction on a datapoint, you can see which labels the model disagrees with.  Even better, you can look at the confidence that model has in the prediction.  So by looking at datapoints that the model is confident are wrong, you can really narrow your focus on your problem areas quickly.</p>
 <p>You then can fix it in 2 ways:</p>
 <ol>
 <li>Replace your labels with the predicted labels following some threshold (ie score of .9 or higher).</li>
@@ -285,8 +285,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-to-use-Psuedo-Labeling-(Noise-Reduction)">
-<a class="anchor" href="#How-to-use-Psuedo-Labeling-(Noise-Reduction)" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use Psuedo Labeling (Noise Reduction)<a class="anchor-link" href="#How-to-use-Psuedo-Labeling-(Noise-Reduction)"> </a>
+<h1 id="How-to-use-pseudo-labeling-(Noise-Reduction)">
+<a class="anchor" href="#How-to-use-pseudo-labeling-(Noise-Reduction)" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use pseudo labeling (Noise Reduction)<a class="anchor-link" href="#How-to-use-pseudo-labeling-(Noise-Reduction)"> </a>
 </h1>
 </div>
 </div>
@@ -460,7 +460,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some of our labels are now misclassified, but we don't know which ones.  We could look at every image to find them, but that would take a ton of time.  Let's try to find the misclassified images and correct them using a Psuedo Labeling Approach.</p>
+<p>Some of our labels are now misclassified, but we don't know which ones.  We could look at every image to find them, but that would take a ton of time.  Let's try to find the misclassified images and correct them using a pseudo labeling approach.</p>
 
 </div>
 </div>
@@ -727,7 +727,7 @@ This cross-fold code was mostly supplied by <a href="https://twitter.com/TheZach
 <span class="n">imgs</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">items_flat</span><span class="p">)</span>
 <span class="n">y_true</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">parent_label</span><span class="p">(</span><span class="n">o</span><span class="p">))</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">items_flat</span><span class="p">)</span> <span class="c1"># Labels from dataset</span>
 <span class="n">y_targ</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">targs</span><span class="p">))</span> <span class="c1"># Labels from out predictions</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">preds_c</span><span class="p">))</span> <span class="c1"># predicted labels or "psuedo labels"</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">preds_c</span><span class="p">))</span> <span class="c1"># predicted labels or "pseudo labels"</span>
 <span class="n">p_max</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># max model score for row</span>
 </pre></div>
 
@@ -869,7 +869,7 @@ This cross-fold code was mostly supplied by <a href="https://twitter.com/TheZach
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Perfect so lets get a list of our images our model got 'wrong' and grab some random ones out of the top 5000 the model was most confident about.  The theory is that many of these may be misclassified, and we can reclassify them either using the predicted 'psuedo' labels, or with manual classification.</p>
+<p>Perfect so lets get a list of our images our model got 'wrong' and grab some random ones out of the top 5000 the model was most confident about.  The theory is that many of these may be misclassified, and we can reclassify them either using the predicted 'pseudo' labels, or with manual classification.</p>
 
 </div>
 </div>
