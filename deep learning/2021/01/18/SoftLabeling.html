@@ -1030,8 +1030,6 @@ This Callback a collaboration:
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df_preds</span><span class="p">,</span><span class="n">y_true_weight</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">):</span> 
         <span class="sd">'''df_preds is a pandas dataframe where index is image paths</span>
 <span class="sd">             Must have y_true and y_pred one hot encoded columns (ie y_true_0, y_true_1)</span>
-<span class="sd">          </span>
-<span class="sd">          imgs will need to be changed if learn.dls.train.items is a dataframe</span>
 <span class="sd">          '''</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">y_true_weight</span> <span class="o">=</span> <span class="n">y_true_weight</span>
