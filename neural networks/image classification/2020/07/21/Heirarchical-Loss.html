@@ -222,8 +222,9 @@ window.onload = wrap_img;
 <h1 id="Intro">
 <a class="anchor" href="#Intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro<a class="anchor-link" href="#Intro"> </a>
 </h1>
-<p>For this post, I am going to make a modification to the loss function.  The goal will be to weight losses differently.  This post is a work in progress as I try to figure stuff out.</p>
+<p>For this post, I am going to make a modification to the loss function.  The goal will be to weight losses differently.  Why should we treat all classes the same in our loss function if they aren't?</p>
 <p>In this blog we are going to do an image classification to take pet pictures and predict the breed.  Normally, each class is treated the same when calculating the loss function.  In this post I will explore a change to take into account weighting classes differently. For example, If a picture is a maincoon, predicting a sphynx (wrong type of cat) is less egregious of an error than predicting pitbull.  I want my loss function to reflect this.</p>
+<p>If you think about it intuitively when we teach children - if we show a child an apple and the chile thinks it's a peach - We probably wouldn't just tell the child he is wrong.  We would probably tell him he is close, but that it's a different fruit and really it's an apple.  Neural networks benefit from having this extra piece of information which is what this post will look to do in a loss function.</p>
 <p>I am going to skim over loading the data and training the model, feel free to see my Fine Grain Image Classifier post from Jun-27-2020 if you want more detail on those aspect.</p>
 
 </div>
@@ -522,8 +523,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#Experiments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Experiments<a class="anchor-link" href="#Experiments"> </a>
 </h1>
 <p>Here I wanted to run tests at different weights to see how they performed.  I ran one with 3 epochs and one with 10 epochs.  I did multiple runs at the same weights so I could see if I was getting stuck in different local minimums due to the change.</p>
-<p>I found that in general, this can help some.  Using a slight amount of weight toward the species helps the neural network optimize better.  This makes sense as we are giving it some more information.</p>
-<p>If you think about it intuitively when we teach children - if we show a child an apple and he thinks it's a peach - We probably wouldn't just tell him he is wrong.  We would probably tell him he is close, but that it's a different fruit and really it's an apple.  Neural networks benefit from having this extra piece of information, which is what the loss function is doing.</p>
+<p>I found that in general, this can help some.  Using a slight amount of weight toward the species helps the neural network optimize better.  This makes sense as we are giving it some more information.  We are telling the neural network more than right class vs wrong class.  We are now giving it a third option (right class vs wrong class but close vs totally wrong class).  Having this extra piece of information is helpful for training your model and is what we are building into the loss function below.</p>
 
 </div>
 </div>
